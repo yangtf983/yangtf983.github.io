@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2019-12-28T13:53:48.323Z</updated>
+  <updated>2020-01-02T08:25:09.626Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>台湾大学林轩田机器学习基石课程学习笔记16（完结） -- Three Learning Principles</title>
-    <link href="http://yangtf983.github.io/2020/01/02/%E5%8F%B0%E6%B9%BE%E5%A4%A7%E5%AD%A6%E6%9E%97%E8%BD%A9%E7%94%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B016%EF%BC%88%E5%AE%8C%E7%BB%93%EF%BC%89%20--%20Three%20Learning%20Principles/"/>
-    <id>http://yangtf983.github.io/2020/01/02/%E5%8F%B0%E6%B9%BE%E5%A4%A7%E5%AD%A6%E6%9E%97%E8%BD%A9%E7%94%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B016%EF%BC%88%E5%AE%8C%E7%BB%93%EF%BC%89%20--%20Three%20Learning%20Principles/</id>
-    <published>2020-01-02T07:12:51.072Z</published>
-    <updated>2019-12-28T13:53:48.323Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;作者：红色石头&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;公众号：AI有道（ID：redstonewill）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;上节课我们讲了一个机器学习很重要的工具——Validation。我们将
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Imitation Learning &amp; Dagger Algorithm</title>
