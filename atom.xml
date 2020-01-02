@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-01-02T02:14:34.896Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Imitation Learning &amp; Dagger Algorithm</title>
+    <link href="http://yoursite.com/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/"/>
+    <id>http://yoursite.com/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/</id>
+    <published>2020-01-02T00:08:47.443Z</published>
+    <updated>2020-01-02T02:14:34.896Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0] 说明&lt;/h2&gt;
+&lt;p&gt;进入Reinforcement Learning的世界，一般而言应当是从tabular method学起，但是从imitation learning学起推广到Reinforcrmrnt Learning可以帮助我们更好的理解RL的解决问题的思路和发展目的，因此我们本次继续跟随cs294的脚步，学习Imitation learning的相关知识以及相对简单的Dagger算法。&lt;/p&gt;
+&lt;p&gt;值得一提的是，IL应当归类于监督学习(Supervised Learning)，但是其可以应用于IRL(Inverse Reinforcement Learning)领域，这也是IL与IRL的重要联系之一。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Reinforcement Learning" scheme="http://yoursite.com/tags/Reinforcement-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2020/01/02/hello-world/"/>
+    <id>http://yoursite.com/2020/01/02/hello-world/</id>
+    <published>2020-01-02T00:04:17.048Z</published>
+    <updated>2020-01-02T00:04:17.048Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>A simple introduce of reinforcement learning</title>
+    <link href="http://yoursite.com/2019/01/30/A_simple_introduce_of_RL/"/>
+    <id>http://yoursite.com/2019/01/30/A_simple_introduce_of_RL/</id>
+    <published>2019-01-29T16:28:02.000Z</published>
+    <updated>2020-01-02T00:10:19.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0]
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Reinforcement Learning" scheme="http://yoursite.com/tags/Reinforcement-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Reinforcement Learning学习计划</title>
+    <link href="http://yoursite.com/2019/01/28/Reinforcement-Learning%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    <id>http://yoursite.com/2019/01/28/Reinforcement-Learning%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</id>
+    <published>2019-01-27T16:27:02.000Z</published>
+    <updated>2019-02-05T11:46:11.238Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;A simple introduce of reinforcement learning&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;建立对RL的认识和理解，帮助进一步学习。&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Imitation Learning &amp;amp;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Reinforcement Learning" scheme="http://yoursite.com/tags/Reinforcement-Learning/"/>
+    
+  </entry>
+  
+</feed>
