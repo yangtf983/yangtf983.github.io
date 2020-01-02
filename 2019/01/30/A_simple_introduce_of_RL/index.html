@@ -4,12 +4,16 @@
   <meta charset="utf-8">
   
   
+    <meta name="keywords" content="12">
+  
+  
+    <meta name="description" content="keep foolish, keep hungry">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
     A simple introduce of reinforcement learning |
     
-    Hexo</title>
+    Young&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/favicon.ico">
   
@@ -25,7 +29,7 @@
 <script src="/js/pace.min.js"></script>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Young's Blog" type="application/atom+xml">
 </head>
 
 <body>
@@ -79,7 +83,8 @@
 
       
         <h2 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> [0] 说明</h2>
-<p>这是本博客RL系列的第一篇文章，旨在对RL进行一个简单的介绍，不涉及高深的理论。作为一个RL初学者，本博客的一系列RL文章都将是我在学习过相应的课程后写的，我会在学习已有资料的基础上加上自己的理解，但是一般不会注明哪些是自己的理解，哪些是材料中的观点。当然我的理解难免会有差错，因此我会在每一篇博文后注明我的学习材料，有需要的读者可以自行寻找阅读，若发现我的差错，欢迎批评指正，我的邮箱是yangtf983@163.com，我会认真回复所有探讨相关问题的邮件。</p>
+<p>这是本博客RL系列的第一篇文章，旨在对RL进行一个简单的介绍，不涉及高深的理论。作为一个RL初学者，本博客的一系列RL文章都将是我在学习过相应的课程后写的，我会在学习已有资料的基础上加上自己的理解，但是一般不会注明哪些是自己的理解，哪些是材料中的观点。当然我的理解难免会有差错，因此我会在每一篇博文后注明我的学习材料，有需要的读者可以自行寻找阅读，若发现我的差错，欢迎批评指正。</p>
+<a id="more"></a>
 <h2 id="1-how-do-we-build-intelligent-machines"><a class="markdownIt-Anchor" href="#1-how-do-we-build-intelligent-machines"></a> [1] How do we build intelligent machines?</h2>
 <p>首先我们尝试理解一个大问题，就是：How do we build intelligent machines?理解这个问题是为了解决本节一个更为核心的问题：<strong>What is reinforcement learning, and why should we care?</strong></p>
 <p>机器是能够根据设定的指令行事的一种无生命的形式，比如手表等物品，但是我们不说手表是智能机器。我们在智能手机名称前加了个智能，但是我们仍然不认为它是智能机器。甚至更复杂一点的，如飞机、火箭、宇宙飞船，集结了人类无数智慧结晶的东西，我们仍然不说它们是智能机器。但是，我们会说microsoft的情感机器人是智能机器、击败人类围棋冠军的alphago是智能机器，哪怕它们目前技术含量并不一定比得上火箭之类的“非智能机器”，但是它们能够对人类的行为做出反应，并且这些反应并不是人类提前用判断语句判断好写入的，而是它们自己学习并适应的，只要给他们足够的时间，他们可以适应越来越多的情况。所以我们可以说：<strong>Intelligent machines must be able to adapt.</strong></p>
@@ -228,11 +233,11 @@
     
   <nav class="article-nav">
     
-      <a href="/2020/01/02/hello-world/" class="article-nav-link">
+      <a href="/2020/01/02/Imitation_Learing&Dagger_Algorithm/" class="article-nav-link">
         <strong class="article-nav-caption">Newer posts</strong>
         <div class="article-nav-title">
           
-            Hello World
+            Imitation Learning &amp; Dagger Algorithm
           
         </div>
       </a>
@@ -267,7 +272,7 @@
 </ul>
     </div>
     <ul class="list-inline">
-      <li>&copy; 2020 Hexo</li>
+      <li>&copy; 2020 Young&#39;s Blog</li>
       <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
       <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
     </ul>
@@ -282,7 +287,7 @@
 <nav class="navbar">
   
     <div class="logo">
-      <a href="/"><img src="/images/hexo.svg" alt="Hexo"></a>
+      <a href="/"><img src="/images/hexo.svg" alt="Young&#39;s Blog"></a>
     </div>
   
   <ul class="nav nav-main">
@@ -296,7 +301,11 @@
       </li>
     
       <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
+        <a class="nav-item-link" href="/categories">Categories</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">Tag</a>
       </li>
     
       <li class="nav-item">

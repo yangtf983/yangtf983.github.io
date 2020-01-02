@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Young&#39;s Blog</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-02T02:14:34.896Z</updated>
+  <updated>2020-01-02T02:41:46.584Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Alexis Young</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/"/>
     <id>http://yoursite.com/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/</id>
     <published>2020-01-02T00:08:47.443Z</published>
-    <updated>2020-01-02T02:14:34.896Z</updated>
+    <updated>2020-01-02T02:41:46.584Z</updated>
     
     <summary type="html">
     
@@ -38,44 +38,16 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/01/02/hello-world/"/>
-    <id>http://yoursite.com/2020/01/02/hello-world/</id>
-    <published>2020-01-02T00:04:17.048Z</published>
-    <updated>2020-01-02T00:04:17.048Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>A simple introduce of reinforcement learning</title>
     <link href="http://yoursite.com/2019/01/30/A_simple_introduce_of_RL/"/>
     <id>http://yoursite.com/2019/01/30/A_simple_introduce_of_RL/</id>
     <published>2019-01-29T16:28:02.000Z</published>
-    <updated>2020-01-02T00:10:19.462Z</updated>
+    <updated>2020-01-02T02:33:01.870Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0]
-        
-      
+      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0] 说明&lt;/h2&gt;
+&lt;p&gt;这是本博客RL系列的第一篇文章，旨在对RL进行一个简单的介绍，不涉及高深的理论。作为一个RL初学者，本博客的一系列RL文章都将是我在学习过相应的课程后写的，我会在学习已有资料的基础上加上自己的理解，但是一般不会注明哪些是自己的理解，哪些是材料中的观点。当然我的理解难免会有差错，因此我会在每一篇博文后注明我的学习材料，有需要的读者可以自行寻找阅读，若发现我的差错，欢迎批评指正。&lt;/p&gt;
     
     </summary>
     
