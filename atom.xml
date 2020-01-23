@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-01-09T09:42:13.310Z</updated>
+  <updated>2020-01-23T02:58:01.536Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习基石笔记一：机器学习简介</title>
+    <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</id>
+    <published>2020-01-23T02:50:18.457Z</published>
+    <updated>2020-01-23T02:58:01.536Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 【0】 说明&lt;/h2&gt;
+&lt;p&gt;机器学习基石是一门很好的机器学习入门课，能够让人在短时间内掌握大量的机器学习的基础理论和原理。从这篇文章开始，我会用大约十几篇文章的内容将机器学习基石我听机器学习基石这门课时候的所学和思考表达出来，我的笔记中会包含大部分基石课程中的内容，并且不会略去任何课程中的证明。对于课程中证明讲的不清楚的一些地方，我还会附上我的理解。关于这门课程的课件可以从&lt;a href=&quot;https://www.csie.ntu.edu.tw/~htlin/course/mlfound17fall/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;课程主页&lt;/a&gt;上下载。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石,听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3-%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>论文翻译：半监督学习介绍</title>
