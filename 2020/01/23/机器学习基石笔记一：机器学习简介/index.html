@@ -83,16 +83,16 @@
         <h2 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 【0】 说明</h2>
 <p>机器学习基石是一门很好的机器学习入门课，能够让人在短时间内掌握大量的机器学习的基础理论和原理。从这篇文章开始，我会用大约十几篇文章的内容将机器学习基石我听机器学习基石这门课时候的所学和思考表达出来，我的笔记中会包含大部分基石课程中的内容，并且不会略去任何课程中的证明。对于课程中证明讲的不清楚的一些地方，我还会附上我的理解。关于这门课程的课件可以从<a href="https://www.csie.ntu.edu.tw/~htlin/course/mlfound17fall/" target="_blank" rel="noopener">课程主页</a>上下载。</p>
 <a id="more"></a>
-<h2 id="机器学习概念"><a class="markdownIt-Anchor" href="#机器学习概念"></a> 机器学习概念</h2>
+<h2 id="1机器学习概念"><a class="markdownIt-Anchor" href="#1机器学习概念"></a> 【1】机器学习概念</h2>
 <p>人类的学习行为可以看作是从观察和实践中学习获得技能，类似地，可以定义机器学习为机器从数据中学习获得技能。</p>
-<h2 id="应用领域"><a class="markdownIt-Anchor" href="#应用领域"></a> 应用领域</h2>
+<h2 id="2应用领域"><a class="markdownIt-Anchor" href="#2应用领域"></a> 【2】应用领域</h2>
 <ol>
 <li>人类无法手动编程的系统——探索火星的系统；</li>
 <li>人类难以轻易写出程序规则的系统——语音/图像识别；</li>
 <li>人类无法做到的快速决策系统——高速股票交易系统；</li>
 <li>个性化服务系统——广告精准投放。</li>
 </ol>
-<h2 id="机器学习三要素"><a class="markdownIt-Anchor" href="#机器学习三要素"></a> 机器学习三要素</h2>
+<h2 id="3机器学习三要素"><a class="markdownIt-Anchor" href="#3机器学习三要素"></a> 【3】机器学习三要素</h2>
 <p>一般认为，一个系统要想应用机器学习方法，需要具备三个条件：</p>
 <ol>
 <li>存在一个可以被学习的潜在模式；</li>
@@ -100,14 +100,14 @@
 <li>可以获得大量数据。<br />
 这三个要素缺一不可：首先，被学习的问题中必须有一个可以被学习的模式，否则机器学习算法永远不可能学到有用的内容，例如用机器学习算法预测一个公平骰子下一次掷出几点；其次，这个规则应当是不知道如何定义，或至少不知道如何准确定义的，否则直接用程序写出规则更加简单和节省算力；最后，要有机器学习的来源，也就是大量的数据，后面我们将会提到，机器学习的可信度与数据量密不可分，而且随着模型变得复杂，达到同样的可信度需要的数据量会剧增。</li>
 </ol>
-<h2 id="例子"><a class="markdownIt-Anchor" href="#例子"></a> 例子</h2>
+<h2 id="4例子"><a class="markdownIt-Anchor" href="#4例子"></a> 【4】例子</h2>
 <ol>
 <li>预测婴儿在某一时刻会不会哭（没有规则，不适合机器学习）；</li>
 <li>判断一个 已给的图像中 是否包含一个圆（可以写出规则，不适合机器学习）；</li>
 <li>决定是发否应该发给某人信用卡（满足三个条件，适合机器学习）；</li>
 <li>预测接下来的十年地球是否会被核武器毁灭（没有充足的数据，不适合机器学习）；</li>
 </ol>
-<h2 id="符号化表示"><a class="markdownIt-Anchor" href="#符号化表示"></a> 符号化表示</h2>
+<h2 id="5符号化表示"><a class="markdownIt-Anchor" href="#5符号化表示"></a> 【5】符号化表示</h2>
 <p>以上述例3为例，将机器学习中的要素进行符号化表示如下：<br />
 输入：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mi mathvariant="script">X</mi></mrow><annotation encoding="application/x-tex">x\in \mathcal{X}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.14643em;">X</span></span></span></span></span>（刻画消费者特征的相关指标）<br />
 输出：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>∈</mo><mi mathvariant="script">Y</mi></mrow><annotation encoding="application/x-tex">y\in \mathcal{Y}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.78055em;vertical-align:-0.09722em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.08222em;">Y</span></span></span></span></span>（适合/不适合发放信用卡）<br />
@@ -116,7 +116,7 @@
 假设：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>:</mo><mi mathvariant="script">X</mi><mo>→</mo><mi mathvariant="script">Y</mi></mrow><annotation encoding="application/x-tex">g:\mathcal{X}\rightarrow \mathcal{Y}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.14643em;">X</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.78055em;vertical-align:-0.09722em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.08222em;">Y</span></span></span></span></span>（g可以通过对数据进行学习逼近<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span>）<br />
 模型的假设：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>∈</mo><mi mathvariant="script">H</mi></mrow><annotation encoding="application/x-tex">g\in \mathcal{H}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.00965em;">H</span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span>是假设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">H</mi></mrow><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.00965em;">H</span></span></span></span></span>中表现最好的那个；<br />
 学习流程：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span>（未知）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo><mtext> </mtext><mo stretchy="false">{</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\rightarrow \ \{(x_{n},y_{n})\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">}</span></span></span></span>（来自<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span>的训练集）$\rightarrow\ $算法 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo><mtext> </mtext><mi>g</mi><mo>≈</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">\rightarrow\ g\approx f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.6775599999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span></p>
-<h2 id="机器学习-vs-数据挖掘-vs-人工智能-vs-统计学"><a class="markdownIt-Anchor" href="#机器学习-vs-数据挖掘-vs-人工智能-vs-统计学"></a> 机器学习 vs 数据挖掘 vs 人工智能 vs 统计学</h2>
+<h2 id="6机器学习-vs-数据挖掘-vs-人工智能-vs-统计学"><a class="markdownIt-Anchor" href="#6机器学习-vs-数据挖掘-vs-人工智能-vs-统计学"></a> 【6】机器学习 vs 数据挖掘 vs 人工智能 vs 统计学</h2>
 <table>
     <tr>
         <th>机器学习</th>
@@ -163,7 +163,6 @@
         <td colspan="2">当g是需要推断的结果，f是未知的目标时，统计学与机器学习的目标和方法是一致的，因此统计学的很多方法和工具可以用于机器学习。</td>
     </tr>
 </table>
-<hr />
 
       
     </div>
@@ -171,7 +170,7 @@
       <a data-url="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" data-id="ck5q57hps000050vbe6hnacky"
          class="article-share-link">Share</a>
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3-%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石,听课笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
 
     </footer>
 
@@ -180,6 +179,15 @@
   
     
   <nav class="article-nav">
+    
+      <a href="/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer posts</strong>
+        <div class="article-nav-title">
+          
+            机器学习基石笔记二：从PLA到SVM
+          
+        </div>
+      </a>
     
     
       <a href="/2020/01/09/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/" class="article-nav-link">

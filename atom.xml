@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-01-23T02:58:01.536Z</updated>
+  <updated>2020-01-23T11:06:07.041Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习基石笔记二：从PLA到SVM</title>
+    <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/"/>
+    <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/</id>
+    <published>2020-01-23T10:54:57.435Z</published>
+    <updated>2020-01-23T11:06:07.041Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;0说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0说明&quot;&gt;&lt;/a&gt; 【0】说明&lt;/h2&gt;
+&lt;p&gt;PLA，全称perceptron learning algorithm，是一种二分类算法，也可以认为是单层神经网络，与SVM有着密不可分的关系。SVM，即support vector machine，中文名是支持向量机，也是一种常见的二分类算法，这种算法的 一种推导方式就是从PLA出发，找到一条“最好的”PLA分类器。在机器学习基石课程中林轩田老师只介绍了PLA，而SVM是他在后续的另一门课程——机器学习技法——中介绍的。由于二者具有紧密的联系，故在此一并介绍。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习基石笔记一：机器学习简介</title>
     <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/"/>
     <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</id>
     <published>2020-01-23T02:50:18.457Z</published>
-    <updated>2020-01-23T02:58:01.536Z</updated>
+    <updated>2020-01-23T03:12:47.356Z</updated>
     
     <summary type="html">
     
@@ -32,7 +52,7 @@
     
     
     
-      <category term="机器学习基石,听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3-%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
