@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-01-23T11:06:07.041Z</updated>
+  <updated>2020-01-24T05:02:30.301Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习基石笔记笔记3：学习类型</title>
+    <link href="http://yangtf983.github.io/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://yangtf983.github.io/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/</id>
+    <published>2020-01-24T05:01:12.808Z</published>
+    <updated>2020-01-24T05:02:30.301Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;0说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0说明&quot;&gt;&lt;/a&gt; 【0】说明&lt;/h2&gt;
+&lt;p&gt;之前在笔记1中的机器学习三要素*（ 1. 存在一个可以被学习的潜在模式； 2. 不知道如何定义规则并写入程序； 3. 可以获得大量数据。）*中已经讲过，机器学习可以执行的前提是存在可以学习的模式以及足够的数据。在实际情况中，学习的模式和输入的数据都可能有很多不同的类型，相应的也诞生了很多不同的学习算法和思想，根据这些不同，机器学习有很多分类，这一节我们介绍一些分类方法和机器学习类型。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习基石笔记二：从PLA到SVM</title>
-    <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/"/>
-    <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/</id>
+    <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/"/>
+    <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/</id>
     <published>2020-01-23T10:54:57.435Z</published>
-    <updated>2020-01-23T11:06:07.041Z</updated>
+    <updated>2020-01-24T02:29:22.399Z</updated>
     
     <summary type="html">
     
@@ -38,8 +58,8 @@
   
   <entry>
     <title>机器学习基石笔记一：机器学习简介</title>
-    <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</id>
+    <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</id>
     <published>2020-01-23T02:50:18.457Z</published>
     <updated>2020-01-23T03:12:47.356Z</updated>
     
@@ -61,7 +81,7 @@
     <link href="http://yangtf983.github.io/2020/01/09/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/"/>
     <id>http://yangtf983.github.io/2020/01/09/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/</id>
     <published>2020-01-09T09:20:56.026Z</published>
-    <updated>2020-01-09T09:42:13.310Z</updated>
+    <updated>2020-01-24T03:34:24.928Z</updated>
     
     <summary type="html">
     
