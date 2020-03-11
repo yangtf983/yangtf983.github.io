@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-01-24T05:02:30.301Z</updated>
+  <updated>2020-03-11T14:26:17.313Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>听课笔记：半监督学习（李宏毅）</title>
+    <link href="http://yangtf983.github.io/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/"/>
+    <id>http://yangtf983.github.io/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/</id>
+    <published>2020-03-11T14:15:31.416Z</published>
+    <updated>2020-03-11T14:26:17.313Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h2&gt;
+&lt;p&gt;本文是一篇半监督学习的听课笔记，主讲者是李宏毅，课程视频&lt;a href=&quot;https://www.bilibili.com/video/av56188223?from=search&amp;amp;seid=17235380881997042888&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;网址&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="semi-supervised learning" scheme="http://yangtf983.github.io/tags/semi-supervised-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习基石笔记笔记3：学习类型</title>
