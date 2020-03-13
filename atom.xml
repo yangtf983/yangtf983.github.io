@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-03-13T13:16:41.129Z</updated>
+  <updated>2020-03-13T13:43:07.835Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yangtf983.github.io/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/"/>
     <id>http://yangtf983.github.io/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/</id>
     <published>2020-03-13T13:12:53.000Z</published>
-    <updated>2020-03-13T13:16:41.129Z</updated>
+    <updated>2020-03-13T13:43:07.835Z</updated>
     
     <summary type="html">
     
@@ -41,7 +41,7 @@
     <link href="http://yangtf983.github.io/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/"/>
     <id>http://yangtf983.github.io/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/</id>
     <published>2020-03-11T14:15:31.416Z</published>
-    <updated>2020-03-11T14:31:21.515Z</updated>
+    <updated>2020-03-13T14:30:08.302Z</updated>
     
     <summary type="html">
     
@@ -61,7 +61,7 @@
     <link href="http://yangtf983.github.io/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/"/>
     <id>http://yangtf983.github.io/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/</id>
     <published>2020-01-24T05:01:12.808Z</published>
-    <updated>2020-01-24T05:02:30.301Z</updated>
+    <updated>2020-03-13T14:38:26.986Z</updated>
     
     <summary type="html">
     
@@ -81,7 +81,7 @@
     <link href="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/"/>
     <id>http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/</id>
     <published>2020-01-23T10:54:57.435Z</published>
-    <updated>2020-03-12T02:25:03.187Z</updated>
+    <updated>2020-03-13T13:35:55.766Z</updated>
     
     <summary type="html">
     
@@ -142,7 +142,7 @@
     <link href="http://yangtf983.github.io/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/"/>
     <id>http://yangtf983.github.io/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/</id>
     <published>2020-01-02T00:08:47.443Z</published>
-    <updated>2020-01-02T08:25:09.626Z</updated>
+    <updated>2020-03-13T14:42:22.033Z</updated>
     
     <summary type="html">
     
@@ -169,36 +169,6 @@
     
       &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0] 说明&lt;/h2&gt;
 &lt;p&gt;这是本博客RL系列的第一篇文章，旨在对RL进行一个简单的介绍，不涉及高深的理论。作为一个RL初学者，本博客的一系列RL文章都将是我在学习过相应的课程后写的，我会在学习已有资料的基础上加上自己的理解，但是一般不会注明哪些是自己的理解，哪些是材料中的观点。当然我的理解难免会有差错，因此我会在每一篇博文后注明我的学习材料，有需要的读者可以自行寻找阅读，若发现我的差错，欢迎批评指正。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Reinforcement Learning" scheme="http://yangtf983.github.io/tags/Reinforcement-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Reinforcement Learning学习计划</title>
-    <link href="http://yangtf983.github.io/2019/01/28/Reinforcement-Learning%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
-    <id>http://yangtf983.github.io/2019/01/28/Reinforcement-Learning%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</id>
-    <published>2019-01-27T16:27:02.000Z</published>
-    <updated>2019-02-05T11:46:11.238Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;A simple introduce of reinforcement learning&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;建立对RL的认识和理解，帮助进一步学习。&lt;/p&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;Imitation Learning &amp;amp;
-        
-      
     
     </summary>
     

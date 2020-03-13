@@ -123,8 +123,8 @@
 具体特征是指输入值具有清晰的实际意义，例如输入用户的收入和存款，判断是否应该发放信用卡。这样的例子中输入数据的实际意义是很明显的，与需要判断的结果联系很密切。具体特征的选择要求实验者有一定的相关知识，这样才能选择最合适的特征。也由于具体特征与判断目标的相关性较大，无关信息少，因此相应的算法往往更加简单，计算难度也较小。<br />
 <strong>raw feature</strong><br />
 原始特征是指具有一些简单的实际意义的数据。例如输入图片的像素值组成的数组来判断图像中是什么。这样的数据中包含与判断结果相关的信息，例如在鉴别数字1和5时可以通过像素值得到图像的对称性和密度，这两个特征对于判别1和5显然是较为有效的，如果提取出来这两个特征并用其来作为判别的数据，那么就变成了具体特征，这个提取特征的过程有一个好听的名字叫做“特征提取”。在传统机器学习中，这一步往往需要认为来进行尝试，在深度学习中已经可以自动提取，不过需要更加大量的数据。<br />
-<img src="https://img-blog.csdnimg.cn/20200124125829936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5ODIxMzcx,size_16,color_FFFFFF,t_70" alt="具体特征" /><br />
-<img src="https://img-blog.csdnimg.cn/20200124125939850.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5ODIxMzcx,size_16,color_FFFFFF,t_70" alt="抽象特征" /><br />
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/03/%E5%85%B7%E4%BD%93%E7%89%B9%E5%BE%81.png" width="50%" height="50%"><br />
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/03/%E6%8A%BD%E8%B1%A1%E7%89%B9%E5%BE%81.png" width="50%" height="50%"><br />
 <strong>abstract feature</strong><br />
 抽象特征是指数据没有或者很少有实际意义，例如输入数据是用户ID，ID数字的大小和接近程度并没有实际的意义，不同的ID只是代表不同的用户，显然其中包含的信息非常少。抽象特征也是三种输入空间中最难进行机器学习的 一种，也需要特征工程。</p>
 
