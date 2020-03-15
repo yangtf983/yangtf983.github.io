@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-03-15T10:26:00.476Z</updated>
+  <updated>2020-03-15T16:37:31.484Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习基石笔记7：The VC Dimension</title>
+    <link href="http://yangtf983.github.io/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B07%EF%BC%9AThe%20VC%20Dimension/"/>
+    <id>http://yangtf983.github.io/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B07%EF%BC%9AThe%20VC%20Dimension/</id>
+    <published>2020-03-15T16:37:07.000Z</published>
+    <updated>2020-03-15T16:37:31.484Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这节课对VC Dimension做出定义和说明。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习基石笔记6：Theory of Generalization</title>
     <link href="http://yangtf983.github.io/2020/03/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B06%EF%BC%9ATheory%20of%20Generalization/"/>
     <id>http://yangtf983.github.io/2020/03/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B06%EF%BC%9ATheory%20of%20Generalization/</id>
     <published>2020-03-15T10:25:07.000Z</published>
-    <updated>2020-03-15T10:26:00.476Z</updated>
+    <updated>2020-03-15T12:37:07.569Z</updated>
     
     <summary type="html">
     
