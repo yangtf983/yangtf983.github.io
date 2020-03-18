@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-03-15T16:37:31.484Z</updated>
+  <updated>2020-03-18T09:05:37.853Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习基石笔记11：Linear Models for Classification</title>
+    <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B011%EF%BC%9ALinear%20Models%20for%20Classification/"/>
+    <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B011%EF%BC%9ALinear%20Models%20for%20Classification/</id>
+    <published>2020-03-18T09:05:07.000Z</published>
+    <updated>2020-03-18T09:05:37.853Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;本堂课在整合之前讲的分类问题后将其延伸到更多更复杂的问题上。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习基石笔记10：Logistic Regression</title>
+    <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/"/>
+    <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/</id>
+    <published>2020-03-17T17:15:07.000Z</published>
+    <updated>2020-03-17T17:15:15.738Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这一节探讨Logistic回归的问题，这种回归实际上是可以看做是一种soft binary classification问题的解法，这种问题是说数据的标签是硬的（确定是圈或叉），但理想的无噪声数据的标签其实是软的（只有是不同标签的概率值）。Logistic模型的形式给出的就是0到1之间的数字（对概率的估计）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习基石笔记9：Linear Regression</title>
+    <link href="http://yangtf983.github.io/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/"/>
+    <id>http://yangtf983.github.io/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/</id>
+    <published>2020-03-17T13:48:07.000Z</published>
+    <updated>2020-03-17T13:49:12.637Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;从这一节课开始讲几种算法。&lt;br /&gt;
+这一节将线性回归，中间的计算步骤涉及到很多矩阵运算，由于这些矩阵运算一般是学过线性代数的人应该已经掌握的，所以文中对视频中对矩阵计算所做的一些解释就不再重复（实际上视频中的解释相当有限，直接看最终结果无碍）。未来几篇文章都会更加关注于对具体算法本身的理解，而对计算的解释将会尽可能忽略。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习基石笔记8：Noise and Error</title>
+    <link href="http://yangtf983.github.io/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B08%EF%BC%9ANoise%20and%20Error/"/>
+    <id>http://yangtf983.github.io/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B08%EF%BC%9ANoise%20and%20Error/</id>
+    <published>2020-03-16T05:04:07.000Z</published>
+    <updated>2020-03-16T05:04:49.916Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;之前的VC bound和VC Dimension是建立在一定的假设上的，这一堂课将学习如何放宽这些假设，使其能够适用于更多不同的问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习基石笔记7：The VC Dimension</title>

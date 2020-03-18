@@ -73,6 +73,276 @@
       
         
 
+<article id="post-机器学习基石笔记2：从PLA到SVM" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/">机器学习基石笔记2：从PLA到SVM</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/" class="article-date">
+  <time datetime="2020-01-23T10:54:57.435Z" itemprop="datePublished">2020-01-23</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="0说明"><a class="markdownIt-Anchor" href="#0说明"></a> 【0】说明</h2>
+<p>PLA，全称perceptron learning algorithm，是一种二分类算法，也可以认为是单层神经网络，与SVM有着密不可分的关系。SVM，即support vector machine，中文名是支持向量机，也是一种常见的二分类算法，这种算法的 一种推导方式就是从PLA出发，找到一条“最好的”PLA分类器。在机器学习基石课程中林轩田老师只介绍了PLA，而SVM是他在后续的另一门课程——机器学习技法——中介绍的。由于二者具有紧密的联系，故在此一并介绍。</p>
+        
+          <a class="article-more-link" href="/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/" data-id="ck7rtbjs10005owvb12fsb3rw"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
+<article id="post-机器学习基石笔记1：机器学习简介" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/">机器学习基石笔记1：机器学习简介</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time datetime="2020-01-23T02:50:18.457Z" itemprop="datePublished">2020-01-23</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 【0】 说明</h2>
+<p>机器学习基石是一门很好的机器学习入门课，能够让人在短时间内掌握大量的机器学习的基础理论和原理。从这篇文章开始，我会用大约十几篇文章的内容将机器学习基石我听机器学习基石这门课时候的所学和思考表达出来，我的笔记中会包含大部分基石课程中的内容，并且不会略去任何课程中的证明。对于课程中证明讲的不清楚的一些地方，我还会附上我的理解。关于这门课程的课件可以从<a href="https://www.csie.ntu.edu.tw/~htlin/course/mlfound17fall/" target="_blank" rel="noopener">课程主页</a>上下载。</p>
+        
+          <a class="article-more-link" href="/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" data-id="ck7rtbjs5000aowvb64txgagy"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
+<article id="post-论文翻译：半监督学习介绍" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/01/09/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/">论文翻译：半监督学习介绍</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/01/09/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time datetime="2020-01-09T09:20:56.026Z" itemprop="datePublished">2020-01-09</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h2>
+<p>本文是一篇关于半监督学习介绍性论文集的第一篇的翻译，大部分是人工翻译，少部分是机器翻译加人工修改。不过限于知识有限，其中很多内容并不了解，所以一些地方翻译不到位，仅供参考。<br />
+论文集电子版链接<a href="https://1drv.ms/b/s!AtSOzmIQPQq9jjCnQTY9h51dVHU3?e=bh5emn" target="_blank" rel="noopener">onedrive</a></p>
+        
+          <a class="article-more-link" href="/2020/01/09/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/01/09/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/" data-id="ck7rtbjss000lowvb34pj6lau"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Semi-supervised-Learning/" rel="tag">Semi-supervised Learning</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
+<article id="post-Imitation_Learing&amp;Dagger_Algorithm" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/01/02/Imitation_Learing&Dagger_Algorithm/">Imitation Learning &amp; Dagger Algorithm</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/01/02/Imitation_Learing&Dagger_Algorithm/" class="article-date">
+  <time datetime="2020-01-02T00:08:47.443Z" itemprop="datePublished">2020-01-02</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> [0] 说明</h2>
+<p>进入Reinforcement Learning的世界，一般而言应当是从tabular method学起，但是从imitation learning学起推广到Reinforcrmrnt Learning可以帮助我们更好的理解RL的解决问题的思路和发展目的，因此我们本次继续跟随cs294的脚步，学习Imitation learning的相关知识以及相对简单的Dagger算法。</p>
+<p>值得一提的是，IL应当归类于监督学习(Supervised Learning)，但是其可以应用于IRL(Inverse Reinforcement Learning)领域，这也是IL与IRL的重要联系之一。</p>
+        
+          <a class="article-more-link" href="/2020/01/02/Imitation_Learing&Dagger_Algorithm/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/01/02/Imitation_Learing&Dagger_Algorithm/" data-id="ck7rtbjrt0001owvbexvvep7g"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reinforcement-Learning/" rel="tag">Reinforcement Learning</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
 <article id="post-A_simple_introduce_of_RL" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
