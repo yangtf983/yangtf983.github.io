@@ -73,6 +73,208 @@
       
         
 
+<article id="post-机器学习基石笔记14：Regularization" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/">机器学习基石笔记14：Regularization</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/" class="article-date">
+  <time datetime="2020-03-19T05:42:07.000Z" itemprop="datePublished">2020-03-19</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>regularization就是给假设加上限制条件后进行最优化的做法。<br />
+这一堂课将引入regularization，介绍weight decay regularization、regularization与VC理论的关系，并讲解正则化的一般方法。</p>
+        
+          <a class="article-more-link" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/" data-id="ck7yc33660001o0vbfx9d3nj5"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
+<article id="post-机器学习基石笔记13：Hazard of Overfitting" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/">机器学习基石笔记13：Hazard of Overfitting</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/" class="article-date">
+  <time datetime="2020-03-18T17:20:07.000Z" itemprop="datePublished">2020-03-19</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>这一节介绍overfitting的危害与应对方法</p>
+        
+          <a class="article-more-link" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/" data-id="ck7yc335y0000o0vb6vwe9luu"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
+<article id="post-机器学习基石笔记12：Nonlinear Transformation" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/">机器学习基石笔记12：Nonlinear Transformation</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/" class="article-date">
+  <time datetime="2020-03-18T15:23:07.000Z" itemprop="datePublished">2020-03-18</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>本节课从线性模型拓展到了非线性模型，总结了这种变换的注意事项和代价。</p>
+        
+          <a class="article-more-link" href="/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/" data-id="ck7yc33680003o0vb1kp3cfwu"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
 <article id="post-机器学习基石笔记11：Linear Models for Classification" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
@@ -523,207 +725,6 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://yangtf983.github.io/2020/03/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B05%EF%BC%9ATraining%20versus%20Testing/" data-id="ck7rtbjt0000oowvbfjnxfvvl"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-</article>
-
-
-
-      
-        
-
-<article id="post-机器学习基石笔记4：Feasibility of Learning" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/">机器学习基石笔记4：Feasibility of Learning</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/" class="article-date">
-  <time datetime="2020-03-13T13:12:53.000Z" itemprop="datePublished">2020-03-13</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
-<p>本节的问题是探究learning的可行性。</p>
-        
-          <a class="article-more-link" href="/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/">Read More...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/" data-id="ck7rtbjs20006owvb6hxr8xsd"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-</article>
-
-
-
-      
-        
-
-<article id="post-听课笔记：半监督学习（李宏毅）" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/">听课笔记：半监督学习（李宏毅）</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/" class="article-date">
-  <time datetime="2020-03-11T14:15:31.416Z" itemprop="datePublished">2020-03-11</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h2 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h2>
-<p>本文是一篇半监督学习的听课笔记，主讲者是李宏毅，课程视频<a href="https://www.bilibili.com/video/av56188223?from=search&amp;seid=17235380881997042888" target="_blank" rel="noopener">网址</a></p>
-        
-          <a class="article-more-link" href="/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/">Read More...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/" data-id="ck7rtbjrx0003owvb3xwf80l3"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Semi-supervised-Learning/" rel="tag">Semi-supervised Learning</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-</article>
-
-
-
-      
-        
-
-<article id="post-机器学习基石笔记3：学习类型" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/">机器学习基石笔记笔记3：学习类型</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/" class="article-date">
-  <time datetime="2020-01-24T05:01:12.808Z" itemprop="datePublished">2020-01-24</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h2 id="0说明"><a class="markdownIt-Anchor" href="#0说明"></a> 【0】说明</h2>
-<p>之前在笔记1中的机器学习三要素*（ 1. 存在一个可以被学习的潜在模式； 2. 不知道如何定义规则并写入程序； 3. 可以获得大量数据。）*中已经讲过，机器学习可以执行的前提是存在可以学习的模式以及足够的数据。在实际情况中，学习的模式和输入的数据都可能有很多不同的类型，相应的也诞生了很多不同的学习算法和思想，根据这些不同，机器学习有很多分类，这一节我们介绍一些分类方法和机器学习类型。</p>
-        
-          <a class="article-more-link" href="/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/">Read More...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/" data-id="ck7rtbjs40007owvbg38g2ye2"
          class="article-share-link">Share</a>
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
