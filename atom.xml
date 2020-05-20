@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-03-19T16:27:53.835Z</updated>
+  <updated>2020-05-20T17:14:13.145Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>应用统计考研经验分享</title>
+    <link href="http://yangtf983.github.io/2020/05/21/%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
+    <id>http://yangtf983.github.io/2020/05/21/%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</id>
+    <published>2020-05-20T16:40:07.000Z</published>
+    <updated>2020-05-20T17:14:13.145Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;初试成绩：409-413&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这一篇文章是打算分享到微博的，为了避免暴露身份我就不放每一门的成绩了，并且具体分数不写，只写一个区间，总之我的成绩比较均衡，考的是一个985的应用统计，每一门分数都是中上，考试的时候有的科目比预料低一些，有的高一些。&lt;/p&gt;
+&lt;p&gt;内容仅供参考，适合不适合你需要你自己考虑，学习是一个很个性化的事情，没办法照搬照抄别人的经验。但是我相信每一个人都有适合自己的学习方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="考研经验" scheme="http://yangtf983.github.io/tags/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习基石笔记16：Three Learning Principles</title>
@@ -394,26 +416,6 @@
       &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0] 说明&lt;/h2&gt;
 &lt;p&gt;进入Reinforcement Learning的世界，一般而言应当是从tabular method学起，但是从imitation learning学起推广到Reinforcrmrnt Learning可以帮助我们更好的理解RL的解决问题的思路和发展目的，因此我们本次继续跟随cs294的脚步，学习Imitation learning的相关知识以及相对简单的Dagger算法。&lt;/p&gt;
 &lt;p&gt;值得一提的是，IL应当归类于监督学习(Supervised Learning)，但是其可以应用于IRL(Inverse Reinforcement Learning)领域，这也是IL与IRL的重要联系之一。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Reinforcement Learning" scheme="http://yangtf983.github.io/tags/Reinforcement-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>A simple introduce of reinforcement learning</title>
-    <link href="http://yangtf983.github.io/2019/01/30/A_simple_introduce_of_RL/"/>
-    <id>http://yangtf983.github.io/2019/01/30/A_simple_introduce_of_RL/</id>
-    <published>2019-01-29T16:28:02.000Z</published>
-    <updated>2020-01-02T02:33:01.870Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0] 说明&lt;/h2&gt;
-&lt;p&gt;这是本博客RL系列的第一篇文章，旨在对RL进行一个简单的介绍，不涉及高深的理论。作为一个RL初学者，本博客的一系列RL文章都将是我在学习过相应的课程后写的，我会在学习已有资料的基础上加上自己的理解，但是一般不会注明哪些是自己的理解，哪些是材料中的观点。当然我的理解难免会有差错，因此我会在每一篇博文后注明我的学习材料，有需要的读者可以自行寻找阅读，若发现我的差错，欢迎批评指正。&lt;/p&gt;
     
     </summary>
     
