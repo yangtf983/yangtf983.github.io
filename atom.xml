@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-05-20T17:14:13.145Z</updated>
+  <updated>2020-06-30T04:14:18.641Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -17,18 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习技法笔记1：Linear SVM</title>
+    <link href="http://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/"/>
+    <id>http://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/</id>
+    <published>2020-06-30T04:14:07.000Z</published>
+    <updated>2020-06-30T04:14:18.641Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这一节介绍的是线性支持向量机的问题，并且是Hard-Margin情形下的支持向量机。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>应用统计考研经验分享</title>
     <link href="http://yangtf983.github.io/2020/05/21/%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
     <id>http://yangtf983.github.io/2020/05/21/%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</id>
     <published>2020-05-20T16:40:07.000Z</published>
-    <updated>2020-05-20T17:14:13.145Z</updated>
+    <updated>2020-06-04T15:55:10.086Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;初试成绩：409-413&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这一篇文章是打算分享到微博的，为了避免暴露身份我就不放每一门的成绩了，并且具体分数不写，只写一个区间，总之我的成绩比较均衡，考的是一个985的应用统计，每一门分数都是中上，考试的时候有的科目比预料低一些，有的高一些。&lt;/p&gt;
-&lt;p&gt;内容仅供参考，适合不适合你需要你自己考虑，学习是一个很个性化的事情，没办法照搬照抄别人的经验。但是我相信每一个人都有适合自己的学习方法。&lt;/p&gt;
+&lt;p&gt;这一篇文章是打算分享到微博的，为了避免暴露身份我就不放每一门的成绩了。&lt;/p&gt;
+&lt;p&gt;内容仅供参考，适合不适合请自己考虑，学习是一个很个性化的事情，没办法照搬照抄别人的经验。但是我相信每一个人都有适合自己的学习方法。&lt;/p&gt;
     
     </summary>
     
@@ -85,7 +105,7 @@
     <link href="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/"/>
     <id>http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/</id>
     <published>2020-03-19T05:42:07.000Z</published>
-    <updated>2020-03-19T05:43:00.186Z</updated>
+    <updated>2020-06-30T03:30:35.411Z</updated>
     
     <summary type="html">
     
@@ -227,7 +247,7 @@
     <link href="http://yangtf983.github.io/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B07%EF%BC%9AThe%20VC%20Dimension/"/>
     <id>http://yangtf983.github.io/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B07%EF%BC%9AThe%20VC%20Dimension/</id>
     <published>2020-03-15T16:37:07.000Z</published>
-    <updated>2020-03-15T16:37:31.484Z</updated>
+    <updated>2020-06-29T08:48:59.489Z</updated>
     
     <summary type="html">
     
@@ -401,27 +421,6 @@
     
     
       <category term="Semi-supervised Learning" scheme="http://yangtf983.github.io/tags/Semi-supervised-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Imitation Learning &amp; Dagger Algorithm</title>
-    <link href="http://yangtf983.github.io/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/"/>
-    <id>http://yangtf983.github.io/2020/01/02/Imitation_Learing&amp;Dagger_Algorithm/</id>
-    <published>2020-01-02T00:08:47.443Z</published>
-    <updated>2020-03-13T14:42:22.033Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; [0] 说明&lt;/h2&gt;
-&lt;p&gt;进入Reinforcement Learning的世界，一般而言应当是从tabular method学起，但是从imitation learning学起推广到Reinforcrmrnt Learning可以帮助我们更好的理解RL的解决问题的思路和发展目的，因此我们本次继续跟随cs294的脚步，学习Imitation learning的相关知识以及相对简单的Dagger算法。&lt;/p&gt;
-&lt;p&gt;值得一提的是，IL应当归类于监督学习(Supervised Learning)，但是其可以应用于IRL(Inverse Reinforcement Learning)领域，这也是IL与IRL的重要联系之一。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Reinforcement Learning" scheme="http://yangtf983.github.io/tags/Reinforcement-Learning/"/>
     
   </entry>
   
