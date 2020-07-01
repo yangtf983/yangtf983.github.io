@@ -73,7 +73,7 @@
       
         
 
-<article id="post-机器学习技法笔记1：Linear SVM" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+<article id="post-机器学习技法/机器学习技法笔记2：Dual Support Vector Machine" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
     
@@ -81,7 +81,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/">机器学习技法笔记1：Linear SVM</a>
+      <a class="article-title" href="/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/">机器学习技法笔记2：Dual Support Vector Machine</a>
     </h2>
   
   
@@ -94,7 +94,74 @@
 
     
       <div class="article-meta">
-        <a href="/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/" class="article-date">
+        <a href="/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/" class="article-date">
+  <time datetime="2020-07-01T04:21:07.000Z" itemprop="datePublished">2020-07-01</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>这一节介绍 hard-margin SVM 的对偶问题。使用对偶有两个好处，一个是简化计算，另一个是方便引入 kernel</p>
+        
+          <a class="article-more-link" href="/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/" data-id="ckc2uty8w0001okvb6mke41lf"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习技法听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
+<article id="post-机器学习技法/机器学习技法笔记1：Linear SVM" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/">机器学习技法笔记1：Linear SVM</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/" class="article-date">
   <time datetime="2020-06-30T04:14:07.000Z" itemprop="datePublished">2020-06-30</time>
 </a>
         
@@ -113,12 +180,12 @@
         <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>这一节介绍的是线性支持向量机的问题，并且是Hard-Margin情形下的支持向量机。</p>
         
-          <a class="article-more-link" href="/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/">Read More...</a>
+          <a class="article-more-link" href="/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/">Read More...</a>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/" data-id="ckc1f3qcg0000ckvbhw497zt3"
+      <a data-url="http://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/" data-id="ckc2uty8p0000okvb11jfbpmz"
          class="article-share-link">Share</a>
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习技法听课笔记</a></li></ul>
@@ -660,74 +727,6 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/" data-id="ck7x3prdy0002z8vbfuaw4b0i"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-</article>
-
-
-
-      
-        
-
-<article id="post-机器学习基石笔记9：Linear Regression" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/">机器学习基石笔记9：Linear Regression</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/" class="article-date">
-  <time datetime="2020-03-17T13:48:07.000Z" itemprop="datePublished">2020-03-17</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
-<p>从这一节课开始讲几种算法。<br />
-这一节将线性回归，中间的计算步骤涉及到很多矩阵运算，由于这些矩阵运算一般是学过线性代数的人应该已经掌握的，所以文中对视频中对矩阵计算所做的一些解释就不再重复（实际上视频中的解释相当有限，直接看最终结果无碍）。未来几篇文章都会更加关注于对具体算法本身的理解，而对计算的解释将会尽可能忽略。</p>
-        
-          <a class="article-more-link" href="/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/">Read More...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/" data-id="ck7x3pre50006z8vb86go6vpq"
          class="article-share-link">Share</a>
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
