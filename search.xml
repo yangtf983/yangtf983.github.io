@@ -276,7 +276,7 @@
   </entry>
   <entry>
     <title>机器学习基石笔记16：Three Learning Principles</title>
-    <url>/2020/03/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B016%EF%BC%9AThree%20Learning%20Principles/</url>
+    <url>/2020/03/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B016%EF%BC%9AThree%20Learning%20Principles/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>这一节介绍三种有用的原则/技巧。<br />
 （本节不过多叙述课程中提到的帮助理解的方式，重点在于记住三种技巧本身）</p>
@@ -323,7 +323,7 @@ GangXia<br />
   </entry>
   <entry>
     <title>机器学习基石笔记15：Validation</title>
-    <url>/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B015%EF%BC%9AValidation/</url>
+    <url>/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B015%EF%BC%9AValidation/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>上一节课讲到可以通过增加regularizer惩罚模型复杂度从而帮助做出正确的选择。<br />
 这一节课讲解如何通过validation选择正确的模型。</p>
@@ -373,7 +373,7 @@ V-fold Cross Validation是一种比Leave-One-Out Cross Validation更实用的方
   </entry>
   <entry>
     <title>机器学习基石笔记14：Regularization</title>
-    <url>/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/</url>
+    <url>/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>regularization就是给假设加上限制条件后进行最优化的做法。<br />
 这一堂课将引入regularization，介绍weight decay regularization、regularization与VC理论的关系，并讲解正则化的一般方法。</p>
@@ -425,7 +425,7 @@ L1和L2是常用的regularizer，对他们做一个比较：<br />
   </entry>
   <entry>
     <title>机器学习基石笔记13：Hazard of Overfitting</title>
-    <url>/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/</url>
+    <url>/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>这一节介绍overfitting的危害与应对方法</p>
 <a id="more"></a>
@@ -478,7 +478,7 @@ data cleaning是修正数据集中的错误标签，data pruning是删除数据�
   </entry>
   <entry>
     <title>机器学习基石笔记12：Nonlinear Transformation</title>
-    <url>/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/</url>
+    <url>/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>本节课从线性模型拓展到了非线性模型，总结了这种变换的注意事项和代价。</p>
 <a id="more"></a>
@@ -542,7 +542,7 @@ data cleaning是修正数据集中的错误标签，data pruning是删除数据�
   </entry>
   <entry>
     <title>机器学习基石笔记11：Linear Models for Classification</title>
-    <url>/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B011%EF%BC%9ALinear%20Models%20for%20Classification/</url>
+    <url>/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B011%EF%BC%9ALinear%20Models%20for%20Classification/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>本堂课在整合之前讲的分类问题后将其延伸到更多更复杂的问题上。</p>
 <a id="more"></a>
@@ -637,7 +637,7 @@ OVO算法过程：<br />
   </entry>
   <entry>
     <title>机器学习基石笔记10：Logistic Regression</title>
-    <url>/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/</url>
+    <url>/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>这一节探讨Logistic回归的问题，这种回归实际上是可以看做是一种soft binary classification问题的解法，这种问题是说数据的标签是硬的（确定是圈或叉），但理想的无噪声数据的标签其实是软的（只有是不同标签的概率值）。Logistic模型的形式给出的就是0到1之间的数字（对概率的估计）。</p>
 <a id="more"></a>
@@ -705,7 +705,7 @@ s是各项指标的线性加权值，<span class="katex"><span class="katex-math
   </entry>
   <entry>
     <title>机器学习基石笔记9：Linear Regression</title>
-    <url>/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/</url>
+    <url>/2020/03/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B09%EF%BC%9ALinear%20Regression/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>从这一节课开始讲几种算法。<br />
 这一节将线性回归，中间的计算步骤涉及到很多矩阵运算，由于这些矩阵运算一般是学过线性代数的人应该已经掌握的，所以文中对视频中对矩阵计算所做的一些解释就不再重复（实际上视频中的解释相当有限，直接看最终结果无碍）。未来几篇文章都会更加关注于对具体算法本身的理解，而对计算的解释将会尽可能忽略。</p>
@@ -755,7 +755,7 @@ s是各项指标的线性加权值，<span class="katex"><span class="katex-math
   </entry>
   <entry>
     <title>机器学习基石笔记8：Noise and Error</title>
-    <url>/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B08%EF%BC%9ANoise%20and%20Error/</url>
+    <url>/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B08%EF%BC%9ANoise%20and%20Error/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>之前的VC bound和VC Dimension是建立在一定的假设上的，这一堂课将学习如何放宽这些假设，使其能够适用于更多不同的问题。</p>
 <a id="more"></a>
@@ -851,7 +851,7 @@ CIA问题的err写法如下：<br />
   </entry>
   <entry>
     <title>机器学习基石笔记7：The VC Dimension</title>
-    <url>/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B07%EF%BC%9AThe%20VC%20Dimension/</url>
+    <url>/2020/03/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B07%EF%BC%9AThe%20VC%20Dimension/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>这节课对VC Dimension做出定义和说明。</p>
 <a id="more"></a>
@@ -921,7 +921,7 @@ VC bound之所以宽松，可以解释为我们获得这个bound过程中的各�
   </entry>
   <entry>
     <title>机器学习基石笔记6：Theory of Generalization</title>
-    <url>/2020/03/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B06%EF%BC%9ATheory%20of%20Generalization/</url>
+    <url>/2020/03/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B06%EF%BC%9ATheory%20of%20Generalization/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>之前说明了假设的数量M可能达到无穷，这个时候会给机器学习的解释造成问题。之后我们定义了一个成长函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>H</mi></msub><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">m_H(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>，希望能够用这个成长函数替代M，并且在上一节的最后说明了如果成长函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>H</mi></msub><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">m_H(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>是多项式量级的，那么就可以达到之前用来解释有限M的条件：随着N的增大，好事情发生的概率可以无限趋近于1.<br />
 接下来要看一下成长函数的增长能不能不超过多项式量级。</p>
@@ -1039,7 +1039,7 @@ i
   </entry>
   <entry>
     <title>机器学习基石笔记5：Training versus Testing</title>
-    <url>/2020/03/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B05%EF%BC%9ATraining%20versus%20Testing/</url>
+    <url>/2020/03/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B05%EF%BC%9ATraining%20versus%20Testing/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>从这一节开始说明无限个假设情况下机器学习的可行性。</p>
 <a id="more"></a>
@@ -1116,7 +1116,7 @@ i
   </entry>
   <entry>
     <title>机器学习基石笔记4：Feasibility of Learning</title>
-    <url>/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/</url>
+    <url>/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
 <p>本节的问题是探究learning的可行性。</p>
 <a id="more"></a>
@@ -1312,7 +1312,7 @@ e-Neighborhood：将每个点与距离其距离小于 e的点全部连起来；<
   </entry>
   <entry>
     <title>机器学习基石笔记笔记3：学习类型</title>
-    <url>/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/</url>
+    <url>/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="0说明"><a class="markdownIt-Anchor" href="#0说明"></a> 【0】说明</h2>
 <p>之前在笔记1中的机器学习三要素*（ 1. 存在一个可以被学习的潜在模式； 2. 不知道如何定义规则并写入程序； 3. 可以获得大量数据。）*中已经讲过，机器学习可以执行的前提是存在可以学习的模式以及足够的数据。在实际情况中，学习的模式和输入的数据都可能有很多不同的类型，相应的也诞生了很多不同的学习算法和思想，根据这些不同，机器学习有很多分类，这一节我们介绍一些分类方法和机器学习类型。</p>
 <a id="more"></a>
@@ -1367,7 +1367,7 @@ e-Neighborhood：将每个点与距离其距离小于 e的点全部连起来；<
   </entry>
   <entry>
     <title>机器学习基石笔记2：从PLA到SVM</title>
-    <url>/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/</url>
+    <url>/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B02%EF%BC%9A%E4%BB%8EPLA%E5%88%B0SVM/</url>
     <content><![CDATA[<h2 id="0说明"><a class="markdownIt-Anchor" href="#0说明"></a> 【0】说明</h2>
 <p>PLA，全称perceptron learning algorithm，是一种二分类算法，也可以认为是单层神经网络，与SVM有着密不可分的关系。SVM，即support vector machine，中文名是支持向量机，也是一种常见的二分类算法，这种算法的 一种推导方式就是从PLA出发，找到一条“最好的”PLA分类器。在机器学习基石课程中林轩田老师只介绍了PLA，而SVM是他在后续的另一门课程——机器学习技法——中介绍的。由于二者具有紧密的联系，故在此一并介绍。</p>
 <a id="more"></a>
@@ -1542,7 +1542,7 @@ h(x)&amp;=sign((\Sigma^{d}_{i=1}w_{i}x_{i})+(-threshold)*(+1))\\
   </entry>
   <entry>
     <title>机器学习基石笔记1：机器学习简介</title>
-    <url>/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</url>
+    <url>/2020/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B01%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<h2 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 【0】 说明</h2>
 <p>机器学习基石是一门很好的机器学习入门课，能够让人在短时间内掌握大量的机器学习的基础理论和原理。从这篇文章开始，我会用大约十几篇文章的内容将机器学习基石我听机器学习基石这门课时候的所学和思考表达出来，我的笔记中会包含大部分基石课程中的内容，并且不会略去任何课程中的证明。对于课程中证明讲的不清楚的一些地方，我还会附上我的理解。关于这门课程的课件可以从<a href="https://www.csie.ntu.edu.tw/~htlin/course/mlfound17fall/" target="_blank" rel="noopener">课程主页</a>上下载。</p>
 <a id="more"></a>
