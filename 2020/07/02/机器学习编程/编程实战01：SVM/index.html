@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="keep foolish, keep hungry">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    机器学习编程：SVM |
+    
+    Young&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Young's Blog" type="application/atom+xml">
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-机器学习编程/编程实战01：SVM" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      机器学习编程：SVM
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%9801%EF%BC%9ASVM/" class="article-date">
+  <time datetime="2020-07-02T12:24:07.000Z" itemprop="datePublished">2020-07-02</time>
+</a>
+        
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>这一篇文章介绍支持向量机的编程问题，涉及到的算法在机器学习技法笔记1-4讲中，参见<a href="https://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/">第 1 讲</a>、<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/">第 2 讲</a>、<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/">第 3 讲</a>、<a href="https://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/">第 4 讲</a></p>
+<a id="more"></a>
+<h1 id="1-使用二次规划求解-hard-margin-linear-svm-的原问题"><a class="markdownIt-Anchor" href="#1-使用二次规划求解-hard-margin-linear-svm-的原问题"></a> 1 使用二次规划求解 hard-margin linear SVM 的原问题</h1>
+<p>使用cvxopt模块求解二次规划问题的使用参考见：<a href="https://scaron.info/blog/quadratic-programming-in-python.html" target="_blank" rel="noopener">Quadratic Programming in Python</a> 和<a href="http://cvxopt.org/examples/tutorial/qp.html" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cvxopt</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cvxopt_solve_qp</span><span class="params">(P, q, G=None, h=None, A=None, b=None)</span>:</span></span><br><span class="line">    P = <span class="number">.5</span> * (P + P.T)  <span class="comment"># make sure P is symmetric</span></span><br><span class="line">    args = [cvxopt.matrix(P), cvxopt.matrix(q)]</span><br><span class="line">    <span class="keyword">if</span> G <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        args.extend([cvxopt.matrix(G), cvxopt.matrix(h)])</span><br><span class="line">        <span class="keyword">if</span> A <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            args.extend([cvxopt.matrix(A), cvxopt.matrix(b)])</span><br><span class="line">    sol = cvxopt.solvers.qp(*args)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'optimal'</span> <span class="keyword">not</span> <span class="keyword">in</span> sol[<span class="string">'status'</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> np.array(sol[<span class="string">'x'</span>]).reshape((P.shape[<span class="number">1</span>],))</span><br></pre></td></tr></table></figure>
+<h3 id="下面用14讲中提到的第一个例子来做演示"><a class="markdownIt-Anchor" href="#下面用14讲中提到的第一个例子来做演示"></a> 下面用1.4讲中提到的第一个例子来做演示</h3>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo separator="true">,</mo><mtext>  </mtext><mi>y</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnalign="left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">X=\left[\begin{array}{ll}
+0 &amp; 0 \\
+2 &amp; 2 \\
+2 &amp; 0 \\
+3 &amp; 0
+\end{array}\right],\ \ 
+y=\left[\begin{array}{l}
+-1 \\
+-1 \\
+1 \\
+1
+\end{array}\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.80204em;vertical-align:-2.15003em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6500000000000004em;"><span style="top:-4.8100000000000005em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-1.2099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.1500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6500000000000004em;"><span style="top:-4.8100000000000005em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.2099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.1500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace"> </span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.80204em;vertical-align:-2.15003em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6500000000000004em;"><span style="top:-4.8100000000000005em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-1.2099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.1500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其手算的最优解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mrow><mi>S</mi><mi>V</mi><mi>M</mi></mrow></msub><mo>=</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g_{SVM}=sign(x_1-x_2-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span><span class="mord mathdefault mtight" style="margin-right:0.22222em;">V</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">M</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">P = np.array([[<span class="number">0.</span>,<span class="number">0.</span>,<span class="number">0.</span>], [<span class="number">0.</span>,<span class="number">1.</span>,<span class="number">0.</span>], [<span class="number">0.</span>,<span class="number">0.</span>,<span class="number">1.</span>]])</span><br><span class="line">q = np.array([<span class="number">0.</span>,<span class="number">0.</span>,<span class="number">0.</span>])</span><br><span class="line">G = -np.array([[<span class="number">-1.</span>,<span class="number">0.</span>,<span class="number">0.</span>], [<span class="number">-1.</span>,<span class="number">-2.</span>,<span class="number">-2.</span>], [<span class="number">1.</span>,<span class="number">2.</span>,<span class="number">0.</span>], [<span class="number">1.</span>,<span class="number">3.</span>,<span class="number">0.</span>]])</span><br><span class="line">h = np.array([<span class="number">-1.</span>,<span class="number">-1.</span>,<span class="number">-1.</span>,<span class="number">-1.</span>]).reshape((<span class="number">4</span>,))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cvxopt_solve_qp(P=P, q=q, G=G, h=h)</span><br></pre></td></tr></table></figure>
+<pre><code>     pcost       dcost       gap    pres   dres
+ 0:  3.2653e-01  1.9592e+00  6e+00  2e+00  4e+00
+ 1:  1.5796e+00  8.5663e-01  7e-01  0e+00  2e-15
+ 2:  1.0195e+00  9.9227e-01  3e-02  1e-16  1e-15
+ 3:  1.0002e+00  9.9992e-01  3e-04  2e-16  2e-15
+ 4:  1.0000e+00  1.0000e+00  3e-06  3e-16  7e-16
+ 5:  1.0000e+00  1.0000e+00  3e-08  4e-16  7e-16
+Optimal solution found.
+
+array([-1.00000001,  1.00000001, -1.00000001])
+</code></pre>
+<p>得到的结果是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><msup><mi>w</mi><mi>t</mi></msup><mo>=</mo><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">b=-1,\ w^t=[1,-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9879959999999999em;vertical-align:-0.19444em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace"> </span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7935559999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mclose">]</span></span></span></span></p>
+<p>因此用上面的程序得到的分类器是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g=sign(x_1 - x_2 - 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，与课程中手算出来的一样。</p>
+<h1 id="2-求解-hard-margin-linear-svm-的对偶问题"><a class="markdownIt-Anchor" href="#2-求解-hard-margin-linear-svm-的对偶问题"></a> 2 求解 hard-margin linear SVM 的对偶问题</h1>
+<p>方法：</p>
+<ol>
+<li>
+<p>使用二次规划求出拉格朗日乘子</p>
+</li>
+<li>
+<p>使用 KKT 条件求出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>b</mi><mo separator="true">,</mo><mi>w</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(b,w)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mclose">)</span></span></span></span></p>
+</li>
+</ol>
+<p>参考网址：<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/">我的博客</a>和 <a href="https://scaron.info/blog/quadratic-programming-in-python.html" target="_blank" rel="noopener">Quadratic Programming in Python</a> 和<a href="http://cvxopt.org/examples/tutorial/qp.html" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cvxopt</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cvxopt_solve_qp</span><span class="params">(P, q, G=None, h=None, A=None, b=None)</span>:</span></span><br><span class="line">    P = <span class="number">.5</span> * (P + P.T)  <span class="comment"># make sure P is symmetric</span></span><br><span class="line">    args = [cvxopt.matrix(P), cvxopt.matrix(q)]</span><br><span class="line">    <span class="keyword">if</span> G <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        args.extend([cvxopt.matrix(G), cvxopt.matrix(h)])</span><br><span class="line">        <span class="keyword">if</span> A <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">if</span> A.shape[<span class="number">1</span>]:</span><br><span class="line">                    args.extend([cvxopt.matrix(A), cvxopt.matrix(b)])</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                args.extend([cvxopt.matrix(A).trans(), cvxopt.matrix(b)])</span><br><span class="line">    sol = cvxopt.solvers.qp(*args)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'optimal'</span> <span class="keyword">not</span> <span class="keyword">in</span> sol[<span class="string">'status'</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> np.array(sol[<span class="string">'x'</span>]).reshape((P.shape[<span class="number">1</span>],))</span><br></pre></td></tr></table></figure>
+<p>上面的函数与之前的有所不同，对于一维数组，使用cvxopt会自动转成单列矩阵，因此需要trans()一次<br />
+保险起见，其实最好的办法是所有输入参数都采用np.matrix数据类型而不是np.array，上面的参考网页中使用的np.array，但这不是最好的选择。<br />
+还有一点需要注意的是，之所以该网页上的 q 用的行向量，就是利用了在数据类型变换中自动转置这个特点，当使用np.matrix数据类型时，q 应当使用列向量。</p>
+<h3 id="同样用14讲中提到的第一个例子来做演示"><a class="markdownIt-Anchor" href="#同样用14讲中提到的第一个例子来做演示"></a> 同样用1.4讲中提到的第一个例子来做演示</h3>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo separator="true">,</mo><mtext>  </mtext><mi>y</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnalign="left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">X=\left[\begin{array}{ll}
+0 &amp; 0 \\
+2 &amp; 2 \\
+2 &amp; 0 \\
+3 &amp; 0
+\end{array}\right],\ \ 
+y=\left[\begin{array}{l}
+-1 \\
+-1 \\
+1 \\
+1
+\end{array}\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.80204em;vertical-align:-2.15003em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6500000000000004em;"><span style="top:-4.8100000000000005em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-1.2099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.1500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6500000000000004em;"><span style="top:-4.8100000000000005em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.2099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.1500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace"> </span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.80204em;vertical-align:-2.15003em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6500000000000004em;"><span style="top:-4.8100000000000005em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-1.2099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.1500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其手算的最优解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mrow><mi>S</mi><mi>V</mi><mi>M</mi></mrow></msub><mo>=</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g_{SVM}=sign(x_1-x_2-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span><span class="mord mathdefault mtight" style="margin-right:0.22222em;">V</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">M</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">P = np.array([<span class="number">0.</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">16</span>)]).reshape([<span class="number">4</span>,<span class="number">4</span>])</span><br><span class="line">z = np.array([[<span class="number">0</span>,<span class="number">0</span>], [<span class="number">2</span>,<span class="number">2</span>], [<span class="number">2</span>,<span class="number">0</span>], [<span class="number">3</span>,<span class="number">0</span>]])</span><br><span class="line">y = np.array([<span class="number">-1.</span>,<span class="number">-1.</span>,<span class="number">1.</span>,<span class="number">1.</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">        P[i, j] = np.dot(z[i], z[j])*y[i]*y[j]</span><br><span class="line">G = -np.eye(<span class="number">4</span>)</span><br><span class="line">A = y</span><br><span class="line">b = np.array([<span class="number">0.</span>])</span><br><span class="line">h = np.zeros((<span class="number">4</span>,<span class="number">1</span>))</span><br><span class="line">q = np.array([<span class="number">-1.</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>)])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cvxopt_solve_qp(P=P, q=q, G=G, h=h, A=A, b=b)</span><br></pre></td></tr></table></figure>
+<pre><code>     pcost       dcost       gap    pres   dres
+ 0: -8.1633e-01 -2.1224e+00  6e+00  2e+00  2e+00
+ 1: -8.5663e-01 -1.5796e+00  7e-01  5e-16  2e-16
+ 2: -9.9227e-01 -1.0195e+00  3e-02  2e-16  5e-16
+ 3: -9.9992e-01 -1.0002e+00  3e-04  1e-16  3e-16
+ 4: -1.0000e+00 -1.0000e+00  3e-06  3e-16  2e-16
+ 5: -1.0000e+00 -1.0000e+00  3e-08  2e-16  8e-16
+Optimal solution found.
+
+array([5.00000000e-01, 5.00000006e-01, 9.99999998e-01, 7.80987988e-09])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">P = np.matrix([<span class="number">0.</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">16</span>)]).reshape([<span class="number">4</span>,<span class="number">4</span>])</span><br><span class="line">z = np.array([[<span class="number">0</span>,<span class="number">0</span>], [<span class="number">2</span>,<span class="number">2</span>], [<span class="number">2</span>,<span class="number">0</span>], [<span class="number">3</span>,<span class="number">0</span>]])</span><br><span class="line">y = np.array([<span class="number">-1.</span>,<span class="number">-1.</span>,<span class="number">1.</span>,<span class="number">1.</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">        P[i, j] = np.dot(z[i], z[j])*y[i]*y[j]</span><br><span class="line">G = -np.eye(<span class="number">4</span>)</span><br><span class="line">G = np.matrix(G)</span><br><span class="line">A = np.array(y)</span><br><span class="line">b = np.matrix([<span class="number">0.</span>])</span><br><span class="line">h = np.zeros((<span class="number">4</span>,<span class="number">1</span>))</span><br><span class="line">h = np.matrix(h)</span><br><span class="line">q = np.array([<span class="number">-1.</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>)])</span><br><span class="line">q = np.matrix(q).T</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alpha = cvxopt_solve_qp(P=P, q=q, G=G, h=h, A=A, b=b)</span><br><span class="line">alpha</span><br></pre></td></tr></table></figure>
+<pre><code>     pcost       dcost       gap    pres   dres
+ 0: -8.1633e-01 -2.1224e+00  6e+00  2e+00  2e+00
+ 1: -8.5663e-01 -1.5796e+00  7e-01  5e-16  2e-16
+ 2: -9.9227e-01 -1.0195e+00  3e-02  2e-16  5e-16
+ 3: -9.9992e-01 -1.0002e+00  3e-04  1e-16  3e-16
+ 4: -1.0000e+00 -1.0000e+00  3e-06  3e-16  2e-16
+ 5: -1.0000e+00 -1.0000e+00  3e-08  2e-16  8e-16
+Optimal solution found.
+
+array([5.00000000e-01, 5.00000006e-01, 9.99999998e-01, 7.80987988e-09])
+</code></pre>
+<p>结果分析：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub><mo>=</mo><mn>0.5</mn><mo separator="true">,</mo><msub><mi>α</mi><mn>2</mn></msub><mo>=</mo><mn>0.5</mn><mo separator="true">,</mo><msub><mi>α</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>α</mi><mn>4</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_1 = 0.5, \alpha_2 = 0.5, \alpha_3 = 1, \alpha_4 = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = <span class="number">-0.5</span>*z[<span class="number">0</span>]<span class="number">-0.5</span>*z[<span class="number">1</span>]+z[<span class="number">2</span>]</span><br><span class="line">w</span><br></pre></td></tr></table></figure>
+<pre><code>array([ 1., -1.])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">-1</span>-np.dot(w,z[<span class="number">1</span>])</span><br><span class="line">b</span><br></pre></td></tr></table></figure>
+<pre><code>-1.0
+</code></pre>
+<p>**结论：**得到的结果恰好等于手算得到的最优解</p>
+<h3 id="下面把整个过程封装成一个函数"><a class="markdownIt-Anchor" href="#下面把整个过程封装成一个函数"></a> 下面把整个过程封装成一个函数</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hard_mar_dual</span><span class="params">(n, P, q, G=None, h=None, A=None, b=None)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    n: w 中元素个数</span></span><br><span class="line"><span class="string">    其他参数：二次规划的参数</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    w = np.array([<span class="number">0.</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)])</span><br><span class="line">    alpha = cvxopt_solve_qp(P, q, G, h, A, b)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(alpha.size):</span><br><span class="line">        alpha[i] = round(alpha[i], <span class="number">4</span>)</span><br><span class="line">        w += alpha[i]*y[i]*z[i]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(alpha.size):</span><br><span class="line">        num = alpha[i]</span><br><span class="line">        <span class="keyword">if</span> num != <span class="number">0</span>:</span><br><span class="line">            b = y[i]-np.dot(w, z[i])</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> w,b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = hard_mar_dual(n=<span class="number">2</span>, P=P, q=q, G=G, h=h, A=A, b=b)</span><br><span class="line">print(<span class="string">'------------------------ \n w = &#123;&#125;, b = &#123;&#125;'</span>.format(result[<span class="number">0</span>], result[<span class="number">1</span>]))</span><br></pre></td></tr></table></figure>
+<pre><code>     pcost       dcost       gap    pres   dres
+ 0: -1.6020e+00 -4.0542e+00  2e+00  1e-16  2e+00
+ 1: -1.8298e+00 -2.1516e+00  3e-01  2e-16  4e-01
+ 2: -1.9897e+00 -2.0317e+00  4e-02  5e-16  4e-16
+ 3: -1.9999e+00 -2.0003e+00  4e-04  2e-16  3e-16
+ 4: -2.0000e+00 -2.0000e+00  4e-06  3e-16  8e-16
+ 5: -2.0000e+00 -2.0000e+00  4e-08  4e-16  5e-16
+Optimal solution found.
+------------------------ 
+ w = [ 1. -1.], b = -1.0
+</code></pre>
+<p>**结论：**得到了正确的实验结果</p>
+<h1 id="3-用-sklean-模块实现-svm"><a class="markdownIt-Anchor" href="#3-用-sklean-模块实现-svm"></a> 3 用 sklean 模块实现 svm</h1>
+<p>前面已经用二次规划求解器实现了 hard-margin 情形下的原问题和对偶问题的求解，而 kernel 问题是将其中的内积计算换成核函数，soft-margin 问题仅仅是在 hard-margin 问题中给 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 增加了一个上限条件，因此这两种方法均不再写代码实现。下面练习使用 sklearn 模块实现 svm.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br></pre></td></tr></table></figure>
+<h3 id="方法介绍"><a class="markdownIt-Anchor" href="#方法介绍"></a> 方法介绍</h3>
+<p>sklearn.svm一共提供了三种分类方法，分别是 svm.SVC(), svm.LinearSVC(), svm.NuSVC()</p>
+<p>svm.SVC()就是我们技法课程中讲的 soft-margin svm 方法，其中可以设置核函数形式（包括线性核）和各种参数，若想用硬边界支持向量机，只需要把 C 设置的大一点即可，例如 1000。这个函数还支持多分类，采用的 ono-vs-one 方法。</p>
+<p>svm.LinearSVC()是专门用来计算线性核的方法，比用 svm.SVC() 中的线性核效率高一些，更适合大样本处理，另外在损失函数的选择和惩罚项的选择上更灵活（参见svm.LinearSVC?）。</p>
+<p>svm.NuSVC() 其实是一种技法课中没有讲过的 SVM 方法，称为 Nu SVM，其特点在于限制支持向量的数量来控制错分的比例，这比 C SVM （就是我们学习的方法）中的用 C 衡量错分和线宽的比重从而间接控制错分比例要直接得多。但是一般前两种方法就可以解决大部分问题了，因此不对这个方法过多介绍。</p>
+<p>首先可以通过下面的方法看一下各个方法中的参数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svm.SVC?</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svm.LinearSVC?</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svm.NuSVC?</span><br></pre></td></tr></table></figure>
+<h3 id="下面是几个小例子"><a class="markdownIt-Anchor" href="#下面是几个小例子"></a> 下面是几个小例子</h3>
+<p><strong>第 1 个例子</strong></p>
+<p>参见<a href="https://scikit-learn.org/stable/modules/svm.html#regression" target="_blank" rel="noopener">文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">X = [[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">1</span>]]</span><br><span class="line">y = [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">clf = svm.SVC()</span><br><span class="line"><span class="comment"># 训练</span></span><br><span class="line">clf.fit(X, y)</span><br><span class="line"><span class="comment"># 预测</span></span><br><span class="line">clf.predict([[<span class="number">2.</span>, <span class="number">2.</span>]])</span><br></pre></td></tr></table></figure>
+<pre><code>array([1])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clf.score?</span><br><span class="line"><span class="comment"># 给出分类精确度的方法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.score([[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">1</span>]], [<span class="number">0</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>1.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查支持向量</span></span><br><span class="line">clf.support_vectors_</span><br></pre></td></tr></table></figure>
+<pre><code>array([[0., 0.],
+       [1., 1.]])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查支持向量的下标</span></span><br><span class="line">clf.support_</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 1])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查每一类中支持向量的数量</span></span><br><span class="line">clf.n_support_</span><br></pre></td></tr></table></figure>
+<pre><code>array([1, 1])
+</code></pre>
+<p><strong>第 2 个例子：线性可分硬边界 svm</strong></p>
+<p>参见<a href="https://scikit-learn.org/stable/auto_examples/svm/plot_separating_hyperplane.html#sphx-glr-auto-examples-svm-plot-separating-hyperplane-py" target="_blank" rel="noopener">文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br></pre></td></tr></table></figure>
+<p>make_blobs 是一种生成聚类随机数据的方法，生成的数据是正太分布的，这里的意思是生成 n_samples 个 n_features 个特征的 centers 个中心的随机种子为 random_state 的数据（所有类数据一共 n_sample 个）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X, y = make_blobs(n_samples=<span class="number">400000</span>, n_features=<span class="number">50</span>, centers=<span class="number">2</span>, random_state=<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"><span class="comment"># 用较大的 C 达到硬边界的效果</span></span><br><span class="line">clf = svm.SVC(kernel=<span class="string">'linear'</span>, C=<span class="number">1000</span>)</span><br><span class="line">clf.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>Wall time: 833 ms
+
+SVC(C=1000, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='scale', kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line">clf = svm.LinearSVC(C=<span class="number">1000</span>)</span><br><span class="line">clf.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>Wall time: 2 s
+
+LinearSVC(C=1000, class_weight=None, dual=True, fit_intercept=True,
+          intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+          multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+          verbose=0)
+</code></pre>
+<p>完整的例子如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># we create 40 separable points</span></span><br><span class="line">X, y = make_blobs(n_samples=<span class="number">40</span>, centers=<span class="number">2</span>, random_state=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># fit the model, don't regularize for illustration purposes</span></span><br><span class="line">clf = svm.SVC(kernel=<span class="string">'linear'</span>, C=<span class="number">1000</span>)</span><br><span class="line">clf.fit(X, y)</span><br><span class="line"></span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">30</span>, cmap=plt.cm.Paired)</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot the decision function</span></span><br><span class="line">ax = plt.gca()</span><br><span class="line">xlim = ax.get_xlim()</span><br><span class="line">ylim = ax.get_ylim()</span><br><span class="line"></span><br><span class="line"><span class="comment"># create grid to evaluate model</span></span><br><span class="line">xx = np.linspace(xlim[<span class="number">0</span>], xlim[<span class="number">1</span>], <span class="number">30</span>)</span><br><span class="line">yy = np.linspace(ylim[<span class="number">0</span>], ylim[<span class="number">1</span>], <span class="number">30</span>)</span><br><span class="line">YY, XX = np.meshgrid(yy, xx)</span><br><span class="line">xy = np.vstack([XX.ravel(), YY.ravel()]).T</span><br><span class="line">Z = clf.decision_function(xy).reshape(XX.shape)</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot decision boundary and margins</span></span><br><span class="line">ax.contour(XX, YY, Z, colors=<span class="string">'k'</span>, levels=[<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>], alpha=<span class="number">0.5</span>,</span><br><span class="line">           linestyles=[<span class="string">'--'</span>, <span class="string">'-'</span>, <span class="string">'--'</span>])</span><br><span class="line"><span class="comment"># plot support vectors</span></span><br><span class="line">ax.scatter(clf.support_vectors_[:, <span class="number">0</span>], clf.support_vectors_[:, <span class="number">1</span>], s=<span class="number">100</span>,</span><br><span class="line">           linewidth=<span class="number">1</span>, facecolors=<span class="string">'none'</span>, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/01/output_22_0.png" alt="png" style="zoom:70%;" />
+<p><strong>第 3 个例子：多类别 svm</strong></p>
+<p>参见<a href="https://scikit-learn.org/stable/modules/svm.html#regression" target="_blank" rel="noopener">文档</a></p>
+<p>先看两个量/方法的含义：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.decision_function?</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.decision_function_shape</span><br></pre></td></tr></table></figure>
+<pre><code>'ovr'
+</code></pre>
+<p>根据提示信息可知 clf.decision_function 方法要求输入预测点的坐标，之后给出每个二分类函数的值（因为多分类无论是 one-vs-one 还是 one-vs-rest 都有不止一个二分类函数），而 clf.decision_function_shape 有两个参数可以选择，分别是 ovo 和 ovr</p>
+<p>当不指定时，SVC 和 NuSVC 默认都是使用 ovo 方法，而 LinearSVC 默认使用 ovr 方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">X = [[<span class="number">0</span>], [<span class="number">1</span>], [<span class="number">2</span>], [<span class="number">3</span>]]</span><br><span class="line">Y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">clf = svm.SVC(decision_function_shape=<span class="string">'ovo'</span>)</span><br><span class="line">clf.fit(X, Y)</span><br><span class="line">dec = clf.decision_function([[<span class="number">1</span>]])</span><br><span class="line">print(dec)</span><br><span class="line">print(dec.shape[<span class="number">1</span>]) <span class="comment"># 4 classes: 4*3/2 = 6</span></span><br><span class="line"></span><br><span class="line">clf.decision_function_shape = <span class="string">"ovr"</span></span><br><span class="line">dec = clf.decision_function([[<span class="number">1</span>]])</span><br><span class="line">print(dec)</span><br><span class="line">print(dec.shape[<span class="number">1</span>]) <span class="comment"># 4 classes</span></span><br></pre></td></tr></table></figure>
+<pre><code>[[-0.55067104  0.          0.40856676  0.55067104  0.9592378   0.40856676]]
+6
+[[ 1.9585256   3.22442151  0.9585256  -0.21327254]]
+4
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lin_clf = svm.LinearSVC()</span><br><span class="line">lin_clf.fit(X, Y)</span><br><span class="line">dec = lin_clf.decision_function([[<span class="number">0</span>],[<span class="number">1</span>],[<span class="number">2</span>],[<span class="number">3</span>]])</span><br><span class="line">print(dec)</span><br><span class="line">print(dec.shape[<span class="number">1</span>]) <span class="comment"># 4 classes</span></span><br></pre></td></tr></table></figure>
+<pre><code>[[ 0.36363856 -0.17093573 -0.5811868  -0.99145989]
+ [-0.54544576 -0.37603944 -0.47859789 -0.58122471]
+ [-1.45453009 -0.58114314 -0.37600898 -0.17098952]
+ [-2.36361441 -0.78624685 -0.27342007  0.23924566]]
+4
+</code></pre>
+<p><strong>第 4 个例子：归一化处理与 svm</strong></p>
+<p>参见<a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html" target="_blank" rel="noopener">文档</a></p>
+<p>在 svm 的使用中，归一化有时可以提供更好的分类器，因为当不同特征的方差相差太大时往往导致难以选出合适的分类器。</p>
+<p>下面这一段程序中，make_pipeline 的作用是把多个 estimator 级联成一个 estimator，这么做的原因是考虑了数据处理过程中一系列前后相继的固定流程，例如：feature selection-&gt;normalization-&gt;classification，使用 pipeline 的好处是只需要调用一次 fit 或 predict 就可以在数据集上训练一组 estimators，并且可以把网格搜索一次性用在 pipeline 中所有的 estimators 参数的参数组合上面。</p>
+<p>注意：Pipleline中最后一个之外的所有estimators都必须是变换器（transformers），最后一个estimator可以是任意类型（transformer，classifier，regresser）</p>
+<p>如果最后一个estimator是个分类器，则整个pipeline就可以作为分类器使用，如果最后一个estimator是个聚类器，则整个pipeline就可以作为聚类器使用。</p>
+<p>这段对 pipeline 的介绍参见<a href="https://www.cnblogs.com/nolonely/p/6970419.html" target="_blank" rel="noopener">博客园</a></p>
+<p>StandardScaler 是一个提供对数据标准化的 estimator，进行的处理包括将均值转移到 0 和将标准差化为 1 两项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> make_pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">X = np.array([[<span class="number">-1</span>, <span class="number">-1</span>], [<span class="number">-2</span>, <span class="number">-1</span>], [<span class="number">1</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">1</span>]])</span><br><span class="line">y = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line">clf = make_pipeline(StandardScaler(), SVC(gamma=<span class="string">'auto'</span>))</span><br><span class="line">clf.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>Pipeline(memory=None,
+         steps=[('standardscaler',
+                 StandardScaler(copy=True, with_mean=True, with_std=True)),
+                ('svc',
+                 SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None,
+                     coef0=0.0, decision_function_shape='ovr', degree=3,
+                     gamma='auto', kernel='rbf', max_iter=-1, probability=False,
+                     random_state=None, shrinking=True, tol=0.001,
+                     verbose=False))],
+         verbose=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(clf.predict([[<span class="number">-0.8</span>, <span class="number">-1</span>]]))</span><br></pre></td></tr></table></figure>
+<pre><code>[1]
+</code></pre>
+<p><strong>第 5 个例子：使用 svm 做手写数据识别</strong></p>
+<p>参见<a href="https://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html#recognizing-hand-written-digits" target="_blank" rel="noopener">文档</a></p>
+<p>数据集的名称是 digits，详细介绍和相关操作见<a href="https://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html#recognizing-hand-written-digits" target="_blank" rel="noopener">tutorial</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">digits = datasets.load_digits()</span><br><span class="line">print(digits.data)</span><br><span class="line">print(digits.data.shape)</span><br><span class="line">print(digits.images[<span class="number">0</span>])</span><br><span class="line">print(digits.images.shape)</span><br></pre></td></tr></table></figure>
+<pre><code>[[ 0.  0.  5. ...  0.  0.  0.]
+ [ 0.  0.  0. ... 10.  0.  0.]
+ [ 0.  0.  0. ... 16.  9.  0.]
+ ...
+ [ 0.  0.  1. ...  6.  0.  0.]
+ [ 0.  0.  2. ... 12.  0.  0.]
+ [ 0.  0. 10. ... 12.  1.  0.]]
+(1797, 64)
+[[ 0.  0.  5. 13.  9.  1.  0.  0.]
+ [ 0.  0. 13. 15. 10. 15.  5.  0.]
+ [ 0.  3. 15.  2.  0. 11.  8.  0.]
+ [ 0.  4. 12.  0.  0.  8.  8.  0.]
+ [ 0.  5.  8.  0.  0.  9.  8.  0.]
+ [ 0.  4. 11.  0.  1. 12.  7.  0.]
+ [ 0.  2. 14.  5. 10. 12.  0.  0.]
+ [ 0.  0.  6. 13. 10.  0.  0.  0.]]
+(1797, 8, 8)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">digits.target</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 1, 2, ..., 8, 9, 8])
+</code></pre>
+<p>先对这个数据集的分类进行尝试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line">clf = svm.SVC(gamma=<span class="number">0.001</span>, C=<span class="number">100.</span>)</span><br><span class="line">clf.fit(digits.data[:<span class="number">-1</span>], digits.target[:<span class="number">-1</span>])</span><br><span class="line"><span class="comment"># 保留最后一个数据用来检验</span></span><br></pre></td></tr></table></figure>
+<pre><code>SVC(C=100.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma=0.001, kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.predict(digits.data[<span class="number">-1</span>:])</span><br></pre></td></tr></table></figure>
+<pre><code>array([8])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 展示一下最后一张图的数字标签，发现确实是8，说明上面的分类是正确的。</span></span><br><span class="line">digits.target[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 展示图像有两种方法，一种是用 PIL 库中的 Image.show，另一种是 matplotlib.pyplot.imshow，下面分别展示：</span></span><br><span class="line"><span class="comment"># 第一种方法：</span></span><br><span class="line"><span class="comment"># 展示一下最后一张图</span></span><br><span class="line">im = Image.fromarray(digits.images[<span class="number">-1</span>])</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第二种方法</span></span><br><span class="line"><span class="comment"># cmap 表示涂色风格，interpolation 表示插值方法</span></span><br><span class="line">plt.imshow(digits.images[<span class="number">-1</span>], cmap=plt.cm.gray_r, interpolation=<span class="string">'nearest'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;matplotlib.image.AxesImage at 0x206560ce848&gt;
+</code></pre>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/01/output_44_1.png" alt="png" style="zoom:70%;" />
+<p>下面增加绘图功能并展示结果的好坏，形成一段完整的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Author: Gael Varoquaux &lt;gael dot varoquaux at normalesup dot org&gt;</span></span><br><span class="line"><span class="comment"># License: BSD 3 clause</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Standard scientific Python imports</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># Import datasets, classifiers and performance metrics</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets, svm, metrics</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line"><span class="comment"># The digits dataset</span></span><br><span class="line">digits = datasets.load_digits()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The data that we are interested in is made of 8x8 images of digits, let's</span></span><br><span class="line"><span class="comment"># have a look at the first 4 images, stored in the `images` attribute of the</span></span><br><span class="line"><span class="comment"># dataset.  If we were working from image files, we could load them using</span></span><br><span class="line"><span class="comment"># matplotlib.pyplot.imread.  Note that each image must have the same size. For these</span></span><br><span class="line"><span class="comment"># images, we know which digit they represent: it is given in the 'target' of</span></span><br><span class="line"><span class="comment"># the dataset.</span></span><br><span class="line">_, axes = plt.subplots(<span class="number">2</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># zip 函数把其中的可迭代类型的参数按照一对一的形成分别组成元组，得到一个新的可迭代类型</span></span><br><span class="line">images_and_labels = list(zip(digits.images, digits.target))</span><br><span class="line"><span class="keyword">for</span> ax, (image, label) <span class="keyword">in</span> zip(axes[<span class="number">0</span>, :], images_and_labels[:<span class="number">4</span>]):</span><br><span class="line">    ax.set_axis_off() <span class="comment"># 不显示坐标轴</span></span><br><span class="line">    ax.imshow(image, cmap=plt.cm.gray_r, interpolation=<span class="string">'nearest'</span>)</span><br><span class="line">    ax.set_title(<span class="string">'Training: %i'</span> % label)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># To apply a classifier on this data, we need to flatten the image, to</span></span><br><span class="line"><span class="comment"># turn the data in a (samples, feature) matrix:</span></span><br><span class="line">n_samples = len(digits.images)</span><br><span class="line">data = digits.images.reshape((n_samples, <span class="number">-1</span>))</span><br><span class="line"><span class="comment"># 这一步也可以直接用 data = digits.data 代替，因为这个数据集是内置数据集，本身有这个展开后的形式</span></span><br><span class="line"><span class="comment"># 对于一般的读入的图像数据，就需要用上面的步骤将其展开成一维数据了</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a classifier: a support vector classifier</span></span><br><span class="line">classifier = svm.SVC(gamma=<span class="number">0.001</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将数据分成训练集和测试集</span></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(</span><br><span class="line">    data, digits.target, test_size=<span class="number">0.5</span>, shuffle=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># We learn the digits on the first half of the digits</span></span><br><span class="line">classifier.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now predict the value of the digit on the second half:</span></span><br><span class="line">predicted = classifier.predict(X_test)</span><br><span class="line"></span><br><span class="line">images_and_predictions = list(zip(digits.images[n_samples // <span class="number">2</span>:], predicted))</span><br><span class="line"><span class="keyword">for</span> ax, (image, prediction) <span class="keyword">in</span> zip(axes[<span class="number">1</span>, :], images_and_predictions[:<span class="number">4</span>]):</span><br><span class="line">    ax.set_axis_off()</span><br><span class="line">    ax.imshow(image, cmap=plt.cm.gray_r, interpolation=<span class="string">'nearest'</span>)</span><br><span class="line">    ax.set_title(<span class="string">'Prediction: %i'</span> % prediction)</span><br></pre></td></tr></table></figure>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/01/output_47_0.png" alt="png" style="zoom:70%;" />
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Classification report for classifier %s:\n%s\n"</span></span><br><span class="line">      % (classifier, metrics.classification_report(y_test, predicted)))</span><br><span class="line">disp = metrics.plot_confusion_matrix(classifier, X_test, y_test)</span><br><span class="line">disp.figure_.suptitle(<span class="string">"Confusion Matrix"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>Classification report for classifier SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma=0.001, kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False):
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99        88
+           1       0.99      0.97      0.98        91
+           2       0.99      0.99      0.99        86
+           3       0.98      0.87      0.92        91
+           4       0.99      0.96      0.97        92
+           5       0.95      0.97      0.96        91
+           6       0.99      0.99      0.99        91
+           7       0.96      0.99      0.97        89
+           8       0.94      1.00      0.97        88
+           9       0.93      0.98      0.95        92
+
+    accuracy                           0.97       899
+   macro avg       0.97      0.97      0.97       899
+weighted avg       0.97      0.97      0.97       899
+
+
+Text(0.5, 0.98, 'Confusion Matrix')
+</code></pre>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/01/output_48_2.png" alt="png" style="zoom:70%;" />
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Confusion matrix:\n%s"</span> % disp.confusion_matrix)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre><code>Confusion matrix:
+[[87  0  0  0  1  0  0  0  0  0]
+ [ 0 88  1  0  0  0  0  0  1  1]
+ [ 0  0 85  1  0  0  0  0  0  0]
+ [ 0  0  0 79  0  3  0  4  5  0]
+ [ 0  0  0  0 88  0  0  0  0  4]
+ [ 0  0  0  0  0 88  1  0  0  2]
+ [ 0  1  0  0  0  0 90  0  0  0]
+ [ 0  0  0  0  0  1  0 88  0  0]
+ [ 0  0  0  0  0  0  0  0 88  0]
+ [ 0  0  0  1  0  1  0  0  0 90]]
+</code></pre>
+<hr />
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%9801%EF%BC%9ASVM/" data-id="ckc4s0o3000006ovb16366szf"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/" rel="tag">机器学习编程</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/" class="article-nav-link">
+        <strong class="article-nav-caption">Olde posts</strong>
+        <div class="article-nav-title">机器学习技法笔记4：Soft-Margin Support Vector Machine</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '3dfca88a6e9197917e1d',
+      clientSecret: 'c9b093664b8f9231146c6f7b34acfd670f165491',
+      repo: 'gitalk-container',
+      owner: 'yangtf983',
+      admin: ['yangtf983'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '3dfca88a6e9197917e1d',
+      clientSecret: 'c9b093664b8f9231146c6f7b34acfd670f165491',
+      repo: 'gitalk-container',
+      owner: 'yangtf983',
+      admin: ['yangtf983'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+  
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 Young&#39;s Blog</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Young&#39;s Blog"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">Categories</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">Tag</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+</body>
+</html>

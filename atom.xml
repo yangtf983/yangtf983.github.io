@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-07-02T04:49:35.378Z</updated>
+  <updated>2020-07-02T12:38:57.048Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习编程：SVM</title>
+    <link href="http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%9801%EF%BC%9ASVM/"/>
+    <id>http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%9801%EF%BC%9ASVM/</id>
+    <published>2020-07-02T12:24:07.000Z</published>
+    <updated>2020-07-02T12:38:57.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这一篇文章介绍支持向量机的编程问题，涉及到的算法在机器学习技法笔记1-4讲中，参见&lt;a href=&quot;https://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/&quot;&gt;第 1 讲&lt;/a&gt;、&lt;a href=&quot;https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/&quot;&gt;第 2 讲&lt;/a&gt;、&lt;a href=&quot;https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/&quot;&gt;第 3 讲&lt;/a&gt;、&lt;a href=&quot;https://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/&quot;&gt;第 4 讲&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习编程" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习技法笔记4：Soft-Margin Support Vector Machine</title>
@@ -401,26 +421,6 @@
     
     
       <category term="Semi-supervised Learning" scheme="http://yangtf983.github.io/tags/Semi-supervised-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习基石笔记笔记3：学习类型</title>
-    <link href="http://yangtf983.github.io/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://yangtf983.github.io/2020/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B03%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%B1%BB%E5%9E%8B/</id>
-    <published>2020-01-24T05:01:12.808Z</published>
-    <updated>2020-03-13T14:38:26.986Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;0说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0说明&quot;&gt;&lt;/a&gt; 【0】说明&lt;/h2&gt;
-&lt;p&gt;之前在笔记1中的机器学习三要素*（ 1. 存在一个可以被学习的潜在模式； 2. 不知道如何定义规则并写入程序； 3. 可以获得大量数据。）*中已经讲过，机器学习可以执行的前提是存在可以学习的模式以及足够的数据。在实际情况中，学习的模式和输入的数据都可能有很多不同的类型，相应的也诞生了很多不同的学习算法和思想，根据这些不同，机器学习有很多分类，这一节我们介绍一些分类方法和机器学习类型。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
