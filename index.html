@@ -73,6 +73,141 @@
       
         
 
+<article id="post-机器学习技法/机器学习技法笔记6：Support Vector Regression" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/">机器学习技法笔记6：Support Vector Regression</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/" class="article-date">
+  <time datetime="2020-07-08T01:28:07.000Z" itemprop="datePublished">2020-07-08</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>上一讲讲到要把 SVM 用到逻辑斯谛回归中的两种方法：一种是两阶段法；另一种是用 L2 正则化逻辑斯蒂回归模型和 representer thorem.</p>
+<p>这一讲的目的是在一般的回归形式中引入 kernel，这种思想产生了我们常用的 SVR 方法。</p>
+        
+          <a class="article-more-link" href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/" data-id="ckcd34a460000lwvbgrdk80ch"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习技法听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
+<article id="post-机器学习技法/机器学习技法笔记5：Kernel Logistic Regression" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/">机器学习技法笔记5：Kernel Logistic Regression</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/" class="article-date">
+  <time datetime="2020-07-08T01:28:07.000Z" itemprop="datePublished">2020-07-08</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>这一讲的目的是把 logistic regression 与 kernel trick 结合，看一下能得到什么样的方法。</p>
+        
+          <a class="article-more-link" href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/" data-id="ckcd34a4g0001lwvb8qxwb9xo"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习技法听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
 <article id="post-机器学习编程/编程实战01：SVM" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
@@ -593,141 +728,6 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B015%EF%BC%9AValidation/" data-id="ckc2uwicc0005l4vbauxx8tqs"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-</article>
-
-
-
-      
-        
-
-<article id="post-机器学习基石/机器学习基石笔记14：Regularization" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/">机器学习基石笔记14：Regularization</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/" class="article-date">
-  <time datetime="2020-03-19T05:42:07.000Z" itemprop="datePublished">2020-03-19</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
-<p>regularization就是给假设加上限制条件后进行最优化的做法。<br />
-这一堂课将引入regularization，介绍weight decay regularization、regularization与VC理论的关系，并讲解正则化的一般方法。</p>
-        
-          <a class="article-more-link" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/">Read More...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/" data-id="ckc2uwicv000ul4vbhuwpdu2m"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-</article>
-
-
-
-      
-        
-
-<article id="post-机器学习基石/机器学习基石笔记13：Hazard of Overfitting" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/">机器学习基石笔记13：Hazard of Overfitting</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/" class="article-date">
-  <time datetime="2020-03-18T17:20:07.000Z" itemprop="datePublished">2020-03-19</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
-<p>这一节介绍overfitting的危害与应对方法</p>
-        
-          <a class="article-more-link" href="/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/">Read More...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/" data-id="ckc2uwicb0003l4vb3l9q60ee"
          class="article-share-link">Share</a>
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习基石听课笔记</a></li></ul>

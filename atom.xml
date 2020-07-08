@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-07-02T12:38:57.048Z</updated>
+  <updated>2020-07-08T08:09:33.743Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习技法笔记6：Support Vector Regression</title>
+    <link href="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/"/>
+    <id>http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/</id>
+    <published>2020-07-08T01:28:07.000Z</published>
+    <updated>2020-07-08T08:09:33.743Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;上一讲讲到要把 SVM 用到逻辑斯谛回归中的两种方法：一种是两阶段法；另一种是用 L2 正则化逻辑斯蒂回归模型和 representer thorem.&lt;/p&gt;
+&lt;p&gt;这一讲的目的是在一般的回归形式中引入 kernel，这种思想产生了我们常用的 SVR 方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习技法笔记5：Kernel Logistic Regression</title>
+    <link href="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/"/>
+    <id>http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/</id>
+    <published>2020-07-08T01:28:07.000Z</published>
+    <updated>2020-07-08T01:28:07.063Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这一讲的目的是把 logistic regression 与 kernel trick 结合，看一下能得到什么样的方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习编程：SVM</title>
@@ -267,7 +308,7 @@
     <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/"/>
     <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/</id>
     <published>2020-03-17T17:15:07.000Z</published>
-    <updated>2020-03-17T17:15:15.738Z</updated>
+    <updated>2020-07-03T00:41:56.837Z</updated>
     
     <summary type="html">
     
@@ -381,46 +422,6 @@
     
     
       <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习基石笔记4：Feasibility of Learning</title>
-    <link href="http://yangtf983.github.io/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/"/>
-    <id>http://yangtf983.github.io/2020/03/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B04%EF%BC%9AFeasibility%20of%20Learning/</id>
-    <published>2020-03-13T13:12:53.000Z</published>
-    <updated>2020-03-13T13:43:07.835Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;本节的问题是探究learning的可行性。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>听课笔记：半监督学习（李宏毅）</title>
-    <link href="http://yangtf983.github.io/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/"/>
-    <id>http://yangtf983.github.io/2020/03/11/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/</id>
-    <published>2020-03-11T14:15:31.416Z</published>
-    <updated>2020-03-13T14:30:08.302Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h2&gt;
-&lt;p&gt;本文是一篇半监督学习的听课笔记，主讲者是李宏毅，课程视频&lt;a href=&quot;https://www.bilibili.com/video/av56188223?from=search&amp;amp;seid=17235380881997042888&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;网址&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Semi-supervised Learning" scheme="http://yangtf983.github.io/tags/Semi-supervised-Learning/"/>
     
   </entry>
   
