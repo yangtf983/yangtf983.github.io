@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="keep foolish, keep hungry">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    机器学习编程 02：用 sklean 模块实现回归 |
+    
+    Young&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Young's Blog" type="application/atom+xml">
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-机器学习编程/机器学习编程02：用 sklean 模块实现回归" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      机器学习编程 02：用 sklean 模块实现回归
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B02%EF%BC%9A%E7%94%A8%20sklean%20%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E5%9B%9E%E5%BD%92/" class="article-date">
+  <time datetime="2020-07-08T13:36:07.000Z" itemprop="datePublished">2020-07-08</time>
+</a>
+        
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>本文希望实现的回归模型有 SVR, linear regression, ridge regression, logistic regression.</p>
+<a id="more"></a>
+<h1 id="1-svr"><a class="markdownIt-Anchor" href="#1-svr"></a> 1 SVR</h1>
+<p>SVR 在机器学习技法课程第 6 讲中第一次被提出，这种方法是回归方法，但是具有 svm 的优良性质，例如可以用二次规划求解和能够使用核技巧，因此被广泛使用.</p>
+<p>关于这个方法<a href="https://scikit-learn.org/stable/modules/svm.html#regression" target="_blank" rel="noopener">sklearn官方文档</a>中的介绍摘录如下：</p>
+<p>The method of Support Vector Classification can be extended to solve regression problems. This method is called Support Vector Regression.</p>
+<p>The model produced by support vector classification (as described above) depends only on a subset of the training data, because the cost function for building the model does not care about training points that lie beyond the margin. Analogously, the model produced by Support Vector Regression depends only on a subset of the training data, because the cost function ignores samples whose prediction is close to their target.</p>
+<p>There are three different implementations of Support Vector Regression: SVR, NuSVR and LinearSVR. LinearSVR provides a faster implementation than SVR but only considers the linear kernel, while NuSVR implements a slightly different formulation than SVR and LinearSVR. See Implementation details for further details.</p>
+<h2 id="11-第-1-个例子"><a class="markdownIt-Anchor" href="#11-第-1-个例子"></a> 1.1 第 1 个例子</h2>
+<p>参见<a href="https://scikit-learn.org/stable/modules/svm.html#regression" target="_blank" rel="noopener">sklearn官方文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line">X = [[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">2</span>]]</span><br><span class="line">y = [<span class="number">0.5</span>, <span class="number">2.5</span>]</span><br><span class="line">regr = svm.SVR(kernel=<span class="string">'linear'</span>)</span><br><span class="line">regr.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='scale',
+    kernel='linear', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regr.predict([[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>,<span class="number">0</span>], [<span class="number">2</span>,<span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
+<pre><code>array([1.5, 0.6, 2.4])
+</code></pre>
+<p>这个例子中只有两个训练的数据点，因此使用线性回归模型时回归函数值一定等于数据点的值，因为必然存在直线过这两个数据点。但是使用 SVR 的默认参数时却不是这样，这是因为 SVR 权衡了 L2 正则项。可以通过减小 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span> 或增大 C 达到这样的效果。展示如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line">X = [[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">2</span>]]</span><br><span class="line">y = [<span class="number">0.5</span>, <span class="number">2.5</span>]</span><br><span class="line">regr = svm.SVR(C=<span class="number">1000</span>, epsilon=<span class="number">0</span>, kernel=<span class="string">'linear'</span>)</span><br><span class="line">regr.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>SVR(C=1000, cache_size=200, coef0=0.0, degree=3, epsilon=0, gamma='scale',
+    kernel='linear', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regr.predict([[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>,<span class="number">0</span>], [<span class="number">2</span>,<span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
+<pre><code>array([1.5, 0.5, 2.5])
+</code></pre>
+<h2 id="12-第-2-个例子svr-using-linear-and-non-linear-kernels"><a class="markdownIt-Anchor" href="#12-第-2-个例子svr-using-linear-and-non-linear-kernels"></a> 1.2 第 2 个例子：SVR using linear and non-linear kernels</h2>
+<p>参见<a href="https://scikit-learn.org/stable/auto_examples/svm/plot_svm_regression.html#sphx-glr-auto-examples-svm-plot-svm-regression-py" target="_blank" rel="noopener">sklearn官方文档</a></p>
+<p>Toy example of 1D regression using linear, polynomial and RBF kernels.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVR</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># #############################################################################</span></span><br><span class="line"><span class="comment"># Generate sample data</span></span><br><span class="line">X = np.sort(<span class="number">5</span> * np.random.rand(<span class="number">40</span>, <span class="number">1</span>), axis=<span class="number">0</span>)</span><br><span class="line">y = np.sin(X).ravel() <span class="comment"># ravel()可以把一个高维数组整理成一个一维数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># #############################################################################</span></span><br><span class="line"><span class="comment"># Add noise to targets</span></span><br><span class="line">y[::<span class="number">5</span>] += <span class="number">3</span> * (<span class="number">0.5</span> - np.random.rand(<span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># #############################################################################</span></span><br><span class="line"><span class="comment"># Fit regression model</span></span><br><span class="line">svr_rbf = SVR(kernel=<span class="string">'rbf'</span>, C=<span class="number">100</span>, gamma=<span class="number">0.1</span>, epsilon=<span class="number">.1</span>)</span><br><span class="line">svr_lin = SVR(kernel=<span class="string">'linear'</span>, C=<span class="number">100</span>, gamma=<span class="string">'auto'</span>)</span><br><span class="line">svr_poly = SVR(kernel=<span class="string">'poly'</span>, C=<span class="number">100</span>, gamma=<span class="string">'auto'</span>, degree=<span class="number">3</span>, epsilon=<span class="number">.1</span>,</span><br><span class="line">               coef0=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svr_rbf</span><br></pre></td></tr></table></figure>
+<pre><code>SVR(C=100, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma=0.1,
+    kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># #############################################################################</span></span><br><span class="line"><span class="comment"># Look at the results</span></span><br><span class="line">lw = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">svrs = [svr_rbf, svr_lin, svr_poly]</span><br><span class="line">kernel_label = [<span class="string">'RBF'</span>, <span class="string">'Linear'</span>, <span class="string">'Polynomial'</span>]</span><br><span class="line">model_color = [<span class="string">'m'</span>, <span class="string">'c'</span>, <span class="string">'g'</span>]</span><br><span class="line"></span><br><span class="line">fig, axes = plt.subplots(nrows=<span class="number">1</span>, ncols=<span class="number">3</span>, figsize=(<span class="number">15</span>, <span class="number">10</span>), sharey=<span class="literal">True</span>)</span><br><span class="line"><span class="keyword">for</span> ix, svr <span class="keyword">in</span> enumerate(svrs):</span><br><span class="line">    axes[ix].plot(X, svr.fit(X, y).predict(X), color=model_color[ix], lw=lw,</span><br><span class="line">                  label=<span class="string">'&#123;&#125; model'</span>.format(kernel_label[ix]))</span><br><span class="line">    axes[ix].scatter(X[svr.support_], y[svr.support_], facecolor=<span class="string">"none"</span>,</span><br><span class="line">                     edgecolor=model_color[ix], s=<span class="number">50</span>,</span><br><span class="line">                     label=<span class="string">'&#123;&#125; support vectors'</span>.format(kernel_label[ix]))</span><br><span class="line">    axes[ix].scatter(X[np.setdiff1d(np.arange(len(X)), svr.support_)],</span><br><span class="line">                     y[np.setdiff1d(np.arange(len(X)), svr.support_)],</span><br><span class="line">                     facecolor=<span class="string">"none"</span>, edgecolor=<span class="string">"k"</span>, s=<span class="number">50</span>,</span><br><span class="line">                     label=<span class="string">'other training data'</span>)</span><br><span class="line">    axes[ix].legend(loc=<span class="string">'upper center'</span>, bbox_to_anchor=(<span class="number">0.5</span>, <span class="number">1.1</span>),</span><br><span class="line">                    ncol=<span class="number">1</span>, fancybox=<span class="literal">True</span>, shadow=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">fig.text(<span class="number">0.5</span>, <span class="number">0.04</span>, <span class="string">'data'</span>, ha=<span class="string">'center'</span>, va=<span class="string">'center'</span>)</span><br><span class="line">fig.text(<span class="number">0.06</span>, <span class="number">0.5</span>, <span class="string">'target'</span>, ha=<span class="string">'center'</span>, va=<span class="string">'center'</span>, rotation=<span class="string">'vertical'</span>)</span><br><span class="line">fig.suptitle(<span class="string">"Support Vector Regression"</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre><code>E:\Anaconda\lib\site-packages\sklearn\utils\validation.py:760: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+E:\Anaconda\lib\site-packages\sklearn\utils\validation.py:760: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+E:\Anaconda\lib\site-packages\sklearn\utils\validation.py:760: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+</code></pre>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/02/output_10_1.png" alt="png" style="zoom:70%;" />
+<h1 id="2-linear-regression-ridge-regression-logistic-regression"><a class="markdownIt-Anchor" href="#2-linear-regression-ridge-regression-logistic-regression"></a> 2 linear regression, ridge regression, logistic regression</h1>
+<p>这三种回归方法的使用都包含在 sklearn.linear_model 中，分别为 linear_model.LinearRegression(), linear_model.Ridge(), linear_model.LogisticRegression()</p>
+<h2 id="21-linear_modellinearregression"><a class="markdownIt-Anchor" href="#21-linear_modellinearregression"></a> 2.1 linear_model.LinearRegression()</h2>
+<p>class sklearn.linear_model.LinearRegression(*, fit_intercept=True, normalize=False, copy_X=True, n_jobs=None)</p>
+<p>参数的含义见<a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression" target="_blank" rel="noopener">官方文档</a></p>
+<h3 id="211-第-1-个例子简单线性回归"><a class="markdownIt-Anchor" href="#211-第-1-个例子简单线性回归"></a> 2.1.1 第 1 个例子：简单线性回归</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">X = np.array([[<span class="number">1</span>, <span class="number">13</span>], [<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">30</span>]])</span><br><span class="line"><span class="comment"># y = 1 * x_0 + 2 * x_1 + 3</span></span><br><span class="line">y = np.dot(X, np.array([<span class="number">1</span>, <span class="number">2</span>])) + <span class="number">3</span></span><br><span class="line">reg = LinearRegression().fit(X, y)</span><br><span class="line">reg.score(X, y) <span class="comment"># 返回决定系数</span></span><br></pre></td></tr></table></figure>
+<pre><code>1.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X</span><br></pre></td></tr></table></figure>
+<pre><code>array([[ 1, 13],
+       [ 1,  2],
+       [ 2,  2],
+       [ 2, 30]])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg.coef_</span><br></pre></td></tr></table></figure>
+<pre><code>array([1., 2.])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg.intercept_</span><br></pre></td></tr></table></figure>
+<pre><code>3.0000000000000107
+</code></pre>
+<h3 id="212-第-2-个例子数据标准化后再线性回归"><a class="markdownIt-Anchor" href="#212-第-2-个例子数据标准化后再线性回归"></a> 2.1.2 第 2 个例子：数据标准化后再线性回归</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> make_pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">X = np.array([[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line"><span class="comment"># y = 1 * x_0 + 2 * x_1 + 3</span></span><br><span class="line">y = np.dot(X, np.array([<span class="number">1</span>, <span class="number">2</span>])) + <span class="number">3</span></span><br><span class="line"></span><br><span class="line">reg = make_pipeline(StandardScaler(), LinearRegression())</span><br><span class="line">reg.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>Pipeline(memory=None,
+         steps=[('standardscaler',
+                 StandardScaler(copy=True, with_mean=True, with_std=True)),
+                ('linearregression',
+                 LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+                                  normalize=False))],
+         verbose=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg.predict(X)</span><br></pre></td></tr></table></figure>
+<pre><code>array([ 6.,  8.,  9., 11.])
+</code></pre>
+<h3 id="213-第-3-个例子简单线性回归与作图使用内置数据集"><a class="markdownIt-Anchor" href="#213-第-3-个例子简单线性回归与作图使用内置数据集"></a> 2.1.3 第 3 个例子：简单线性回归与作图（使用内置数据集）</h3>
+<p>参见<a href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html#linear-regression-example" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets, linear_model</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error, r2_score</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the diabetes dataset</span></span><br><span class="line">diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use only one feature</span></span><br><span class="line"><span class="comment"># 提取 diabetes_y 的第 3 列数据并转为列向量</span></span><br><span class="line">diabetes_X = diabetes_X[:, np.newaxis, <span class="number">2</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment"># Split the data into training/testing sets</span></span><br><span class="line">diabetes_X_train = diabetes_X[:<span class="number">-20</span>]</span><br><span class="line">diabetes_X_test = diabetes_X[<span class="number">-20</span>:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Split the targets into training/testing sets</span></span><br><span class="line">diabetes_y_train = diabetes_y[:<span class="number">-20</span>]</span><br><span class="line">diabetes_y_test = diabetes_y[<span class="number">-20</span>:]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create linear regression object</span></span><br><span class="line">regr = linear_model.LinearRegression()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Train the model using the training sets</span></span><br><span class="line">regr.fit(diabetes_X_train, diabetes_y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Make predictions using the testing set</span></span><br><span class="line">diabetes_y_pred = regr.predict(diabetes_X_test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The coefficients</span></span><br><span class="line">print(<span class="string">'Coefficients: \n'</span>, regr.coef_)</span><br><span class="line"><span class="comment"># The mean squared error</span></span><br><span class="line">print(<span class="string">'Mean squared error: %.2f'</span></span><br><span class="line">      % mean_squared_error(diabetes_y_test, diabetes_y_pred))</span><br><span class="line"><span class="comment"># The coefficient of determination: 1 is perfect prediction</span></span><br><span class="line">print(<span class="string">'Coefficient of determination: %.2f'</span></span><br><span class="line">      % r2_score(diabetes_y_test, diabetes_y_pred))</span><br></pre></td></tr></table></figure>
+<pre><code>Coefficients: 
+ [938.23786125]
+Mean squared error: 2548.07
+Coefficient of determination: 0.47
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plot outputs</span></span><br><span class="line">plt.scatter(diabetes_X_test, diabetes_y_test,  color=<span class="string">'black'</span>)</span><br><span class="line">plt.plot(diabetes_X_test, diabetes_y_pred, color=<span class="string">'blue'</span>, linewidth=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 隐藏坐标轴数值</span></span><br><span class="line"><span class="comment">#plt.xticks(())</span></span><br><span class="line"><span class="comment">#plt.yticks(())</span></span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/02/output_24_0.png" alt="png" style="zoom:70%;" />
+<h2 id="22-sklearnlinear_modelridge"><a class="markdownIt-Anchor" href="#22-sklearnlinear_modelridge"></a> 2.2 sklearn.linear_model.Ridge()</h2>
+<p>class sklearn.linear_model.Ridge(alpha=1.0, *, fit_intercept=True, normalize=False, copy_X=True, max_iter=None, tol=0.001, solver=‘auto’, random_state=None)</p>
+<p>参见<a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn-linear-model-ridge" target="_blank" rel="noopener">官方文档</a>和<a href="https://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/">基石笔记第 14 讲</a></p>
+<p>这里使用的优化函数的形式是：||y - Xw||^2_2 + alpha * ||w||^2_2</p>
+<p>因此这里的 alpha 即我们在基石课程中用到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span>，越大则说明正则项影响越强。</p>
+<h3 id="221-第-1-个例子直接使用岭回归"><a class="markdownIt-Anchor" href="#221-第-1-个例子直接使用岭回归"></a> 2.2.1 第 1 个例子：直接使用岭回归</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> Ridge</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">n_samples, n_features = <span class="number">10</span>, <span class="number">5</span></span><br><span class="line">rng = np.random.RandomState(<span class="number">0</span>) <span class="comment"># 设定随机数种子</span></span><br><span class="line">y = rng.randn(n_samples)</span><br><span class="line">X = rng.randn(n_samples, n_features)</span><br><span class="line">clf = Ridge(alpha=<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None,
+      normalize=False, random_state=None, solver='auto', tol=0.001)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.predict(X)</span><br></pre></td></tr></table></figure>
+<pre><code>array([ 0.95424223,  0.48712089,  1.10388121,  1.79105759,  1.05769745,
+       -0.07915715,  1.12314109, -0.22941441,  0.64906337,  0.52259943])
+</code></pre>
+<h3 id="222-第-2-个例子画出岭迹"><a class="markdownIt-Anchor" href="#222-第-2-个例子画出岭迹"></a> 2.2.2 第 2  个例子：画出岭迹</h3>
+<p>岭迹是用来选择合适的 alpha 的重要方法。在岭回归中，当 alpha 越大，得到模型的平方误差函数也就越大，但是系数绝对值越小，系数的方差也越小。当选定 alpha 时，我们的目标是使得具有 L2 正则项的平方误差项最小。但是 alpha 的选择之前的基石课程中却没有讲。实际上 alpha 的选择是为了使得岭回归的系数与真实的线性模型系数的均方误差达到最小（因为使用岭回归的情景就是原问题的系数方差太大，这可能是因为需要求逆的矩阵不可逆或难以求逆等原因导致的）。为了达到这个目的，一般我们使用岭迹确定合适的 alpha，这个方法就是把岭回归中的各种系数随着 alpha 变化的值画到一张图上，我们称这样连出来的线为岭迹，我们选择曲线趋于平稳时的较小的 alpha 作为合适的 alpha。这样做的合理性为：当曲线趋于平稳时，说明系数的方差变化趋于平稳，这样当继续增大 alpha 时，系数方差的减小量很有可能就小于系数与真实系数偏差的增大量了，而均方误差就等于方差加上偏差，所以这样选择比较有可能得到使得均方误差较小的 alpha。</p>
+<p>下面看一个画岭迹的例子，参见<a href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ridge_path.html#sphx-glr-auto-examples-linear-model-plot-ridge-path-py" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># X is the 10x10 Hilbert matrix</span></span><br><span class="line">X = <span class="number">1.</span> / (np.arange(<span class="number">1</span>, <span class="number">11</span>) + np.arange(<span class="number">0</span>, <span class="number">10</span>)[:, np.newaxis])</span><br><span class="line">y = np.ones(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># #############################################################################</span></span><br><span class="line"><span class="comment"># Compute paths</span></span><br><span class="line"></span><br><span class="line">n_alphas = <span class="number">200</span></span><br><span class="line">alphas = np.logspace(<span class="number">-10</span>, <span class="number">-2</span>, n_alphas)</span><br><span class="line"></span><br><span class="line">coefs = []</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> alphas:</span><br><span class="line">    ridge = linear_model.Ridge(alpha=a, fit_intercept=<span class="literal">False</span>)</span><br><span class="line">    ridge.fit(X, y)</span><br><span class="line">    coefs.append(ridge.coef_)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># #############################################################################</span></span><br><span class="line"><span class="comment"># Display results</span></span><br><span class="line"></span><br><span class="line">ax = plt.gca()</span><br><span class="line"></span><br><span class="line">ax.plot(alphas, coefs)</span><br><span class="line">ax.set_xscale(<span class="string">'log'</span>)</span><br><span class="line">ax.set_xlim(ax.get_xlim()[::<span class="number">-1</span>])  <span class="comment"># reverse axis</span></span><br><span class="line">plt.xlabel(<span class="string">'alpha'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'weights'</span>)</span><br><span class="line">plt.title(<span class="string">'Ridge coefficients as a function of the regularization'</span>)</span><br><span class="line">plt.axis(<span class="string">'tight'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/02/output_32_0.png" alt="png" style="zoom:70%;" />
+<p>从上图中可以看出，这组数据使用 10e-5 或 10e-6 比较合适</p>
+<h2 id="23-sklearnlinear_modellogisticregression"><a class="markdownIt-Anchor" href="#23-sklearnlinear_modellogisticregression"></a> 2.3 sklearn.linear_model.LogisticRegression()</h2>
+<p>这里除了介绍 LogisticRegression()，再介绍一下 sklearn.linear_model.LogisticRegressionCV()，后者是 Logistic regression with built-in cross validation.</p>
+<p><strong>首先看 LogisticRegression()</strong></p>
+<p>class sklearn.linear_model.LogisticRegression(penalty=‘l2’, *, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver=‘lbfgs’, max_iter=100, multi_class=‘auto’, verbose=0, warm_start=False, n_jobs=None, l1_ratio=None)</p>
+<p>参见<a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn-linear-model-logisticregression" target="_blank" rel="noopener">官方文档</a>和<a href="https://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/">基石笔记第 10 讲</a></p>
+<h3 id="231-一个-logisticregression-的小例子"><a class="markdownIt-Anchor" href="#231-一个-logisticregression-的小例子"></a> 2.3.1 一个 LogisticRegression() 的小例子</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line">X, y = load_iris(return_X_y=<span class="literal">True</span>)</span><br><span class="line">clf = LogisticRegression(random_state=<span class="number">0</span>).fit(X, y)</span><br><span class="line">clf.predict(X[:<span class="number">2</span>, :])</span><br></pre></td></tr></table></figure>
+<pre><code>E:\Anaconda\lib\site-packages\sklearn\linear_model\_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+
+array([0, 0])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y[:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 0])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.predict_proba(X[:<span class="number">2</span>, :])</span><br></pre></td></tr></table></figure>
+<pre><code>array([[9.81797141e-01, 1.82028445e-02, 1.44269293e-08],
+       [9.71725476e-01, 2.82744937e-02, 3.01659208e-08]])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.score(X, y) <span class="comment"># Return the mean accuracy on the given test data and labels.</span></span><br></pre></td></tr></table></figure>
+<pre><code>0.9733333333333334
+</code></pre>
+<h4 id="232-三类别逻辑斯谛回归-logisticregression"><a class="markdownIt-Anchor" href="#232-三类别逻辑斯谛回归-logisticregression"></a> 2.3.2 三类别逻辑斯谛回归 LogisticRegression()</h4>
+<p>与上一个例子一样使用 iris 数据集，这个数据集包含三种类别的鸢尾花，y 值是它们的种类，x 值有四个维度，分别代表：花萼长度、花萼宽度、花瓣长度、花瓣宽度。</p>
+<p>参见<a href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html#sphx-glr-auto-examples-linear-model-plot-iris-logistic-py" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"></span><br><span class="line"><span class="comment"># import some data to play with</span></span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line">X = iris.data[:, :<span class="number">2</span>]  <span class="comment"># we only take the first two features.</span></span><br><span class="line">Y = iris.target</span><br><span class="line"></span><br><span class="line">logreg = LogisticRegression(C=<span class="number">1e5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create an instance of Logistic Regression Classifier and fit the data.</span></span><br><span class="line">logreg.fit(X, Y)</span><br></pre></td></tr></table></figure>
+<pre><code>LogisticRegression(C=100000.0, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plot the decision boundary. For that, we will assign a color to each</span></span><br><span class="line"><span class="comment"># point in the mesh [x_min, x_max]x[y_min, y_max].</span></span><br><span class="line">x_min, x_max = X[:, <span class="number">0</span>].min() - <span class="number">.5</span>, X[:, <span class="number">0</span>].max() + <span class="number">.5</span></span><br><span class="line">y_min, y_max = X[:, <span class="number">1</span>].min() - <span class="number">.5</span>, X[:, <span class="number">1</span>].max() + <span class="number">.5</span></span><br><span class="line">h = <span class="number">.02</span>  <span class="comment"># step size in the mesh</span></span><br><span class="line">xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))</span><br><span class="line">Z = logreg.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Put the result into a color plot</span></span><br><span class="line">Z = Z.reshape(xx.shape)</span><br><span class="line">plt.figure(<span class="number">1</span>, figsize=(<span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">plt.pcolormesh(xx, yy, Z, cmap=plt.cm.Paired)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot also the training points</span></span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=Y, edgecolors=<span class="string">'k'</span>, cmap=plt.cm.Paired)</span><br><span class="line">plt.xlabel(<span class="string">'Sepal length'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Sepal width'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(xx.min(), xx.max())</span><br><span class="line">plt.ylim(yy.min(), yy.max())</span><br><span class="line">plt.xticks(())</span><br><span class="line">plt.yticks(())</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/02/output_42_0.png" alt="png" style="zoom:70%;" />
+<p><strong>接着看一下 LogisticRegressionCV()</strong></p>
+<p>class sklearn.linear_model.LogisticRegressionCV(*, Cs=10, fit_intercept=True, cv=None, dual=False, penalty=‘l2’, scoring=None, solver=‘lbfgs’, tol=0.0001, max_iter=100, class_weight=None, n_jobs=None, verbose=0, refit=True, intercept_scaling=1.0, multi_class=‘auto’, random_state=None, l1_ratios=None)</p>
+<p>参见<a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV" target="_blank" rel="noopener">官方文档</a></p>
+<p>与交叉验证有关的重要的参数有两个：</p>
+<pre><code>1. Cs: int or list of floats, default=10
+</code></pre>
+<blockquote>
+<p>Each of the values in Cs describes the inverse of regularization strength. If Cs is as an int, then a grid of Cs values are chosen in a logarithmic scale between 1e-4 and 1e4. Like in support vector machines, smaller values specify stronger regularization.</p>
+</blockquote>
+<pre><code>2. cv: int or cross-validation generator, default=None
+</code></pre>
+<blockquote>
+<p>The default cross-validation generator used is Stratified K-Folds. If an integer is provided, then it is the number of folds used. See the module sklearn.model_selection module for the list of possible cross-validation objects.</p>
+</blockquote>
+<h4 id="233-一个-logisticregressioncv-的例子"><a class="markdownIt-Anchor" href="#233-一个-logisticregressioncv-的例子"></a> 2.3.3 一个 LogisticRegressionCV() 的例子</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegressionCV</span><br><span class="line">X, y = load_iris(return_X_y=<span class="literal">True</span>)</span><br><span class="line">clf = LogisticRegressionCV(cv=<span class="number">5</span>, random_state=<span class="number">0</span>)</span><br><span class="line">clf.fit(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>E:\Anaconda\lib\site-packages\sklearn\linear_model\_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+E:\Anaconda\lib\site-packages\sklearn\linear_model\_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+E:\Anaconda\lib\site-packages\sklearn\linear_model\_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+E:\Anaconda\lib\site-packages\sklearn\linear_model\_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+E:\Anaconda\lib\site-packages\sklearn\linear_model\_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+
+
+
+
+
+LogisticRegressionCV(Cs=10, class_weight=None, cv=5, dual=False,
+                     fit_intercept=True, intercept_scaling=1.0, l1_ratios=None,
+                     max_iter=100, multi_class='auto', n_jobs=None,
+                     penalty='l2', random_state=0, refit=True, scoring=None,
+                     solver='lbfgs', tol=0.0001, verbose=0)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.predict(X[:<span class="number">2</span>, :])</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 0])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.predict_proba(X[:<span class="number">2</span>, :]).shape</span><br></pre></td></tr></table></figure>
+<pre><code>(2, 3)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.score(X, y)</span><br></pre></td></tr></table></figure>
+<pre><code>0.98
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clf.get_params()</span><br></pre></td></tr></table></figure>
+<pre><code>{'Cs': 10,
+ 'class_weight': None,
+ 'cv': 5,
+ 'dual': False,
+ 'fit_intercept': True,
+ 'intercept_scaling': 1.0,
+ 'l1_ratios': None,
+ 'max_iter': 100,
+ 'multi_class': 'auto',
+ 'n_jobs': None,
+ 'penalty': 'l2',
+ 'random_state': 0,
+ 'refit': True,
+ 'scoring': None,
+ 'solver': 'lbfgs',
+ 'tol': 0.0001,
+ 'verbose': 0}
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B02%EF%BC%9A%E7%94%A8%20sklean%20%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E5%9B%9E%E5%BD%92/" data-id="ckcdewc7b00014ovb87nr27p2"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/" rel="tag">机器学习编程</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/" class="article-nav-link">
+        <strong class="article-nav-caption">Olde posts</strong>
+        <div class="article-nav-title">机器学习技法笔记6：Support Vector Regression</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '3dfca88a6e9197917e1d',
+      clientSecret: 'c9b093664b8f9231146c6f7b34acfd670f165491',
+      repo: 'gitalk-container',
+      owner: 'yangtf983',
+      admin: ['yangtf983'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '3dfca88a6e9197917e1d',
+      clientSecret: 'c9b093664b8f9231146c6f7b34acfd670f165491',
+      repo: 'gitalk-container',
+      owner: 'yangtf983',
+      admin: ['yangtf983'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+  
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 Young&#39;s Blog</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Young&#39;s Blog"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">Categories</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">Tag</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+</body>
+</html>
