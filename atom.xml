@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-07-19T09:35:01.714Z</updated>
+  <updated>2020-07-19T09:52:32.175Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>机器学习技法笔记10：Random Forest</title>
-    <link href="http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B010%EF%BC%9ARandom%20Forest/"/>
-    <id>http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B010%EF%BC%9ARandom%20Forest/</id>
-    <published>2020-07-19T09:34:07.000Z</published>
-    <updated>2020-07-19T09:35:01.714Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;我们已经学了 uniform 的聚合算法 bagging 、linear 的聚合算法 AdaBoost 和 conditional 的聚合算法决策树。&lt;/p&gt;
-&lt;p&gt;这一讲要讲的随机森林可以把聚合算法融合起来，可以称之为聚合的聚合（aggregation of aggregation），更具体地说，是用 bagging 的方式把决策树聚合起来。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
   
   <entry>
     <title>机器学习技法笔记11：Gradient Boosted Decision Tree</title>
@@ -53,6 +32,29 @@
     
     </summary>
     
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习技法笔记10：Random Forest</title>
+    <link href="http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B010%EF%BC%9ARandom%20Forest/"/>
+    <id>http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B010%EF%BC%9ARandom%20Forest/</id>
+    <published>2020-07-19T09:34:07.000Z</published>
+    <updated>2020-07-19T11:21:48.409Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;我们已经学了 uniform 的聚合算法 bagging 、linear 的聚合算法 AdaBoost 和 conditional 的聚合算法决策树。&lt;/p&gt;
+&lt;p&gt;这一讲要讲的随机森林可以把聚合算法融合起来，可以称之为聚合的聚合（aggregation of aggregation），更具体地说，是用 bagging 的方式把决策树聚合起来。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
