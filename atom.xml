@@ -38,6 +38,28 @@
   </entry>
   
   <entry>
+    <title>机器学习技法笔记11：Gradient Boosted Decision Tree</title>
+    <link href="http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/"/>
+    <id>http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/</id>
+    <published>2020-07-19T09:34:07.000Z</published>
+    <updated>2020-07-19T09:52:32.175Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;上一讲讲了随机森林，这是一种用 Bagging 的方式把决策树聚合起来的算法。&lt;/p&gt;
+&lt;p&gt;这一讲要讲的是 AdaBoost 和决策树的结合，以及把算法延伸到非分类问题上的方法。&lt;/p&gt;
+&lt;p&gt;这一讲讲完，聚合模型的内容也就告一段落，这一讲的最后会对讲过的聚合模型做一个总结。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习技法笔记9：Decision Tree</title>
     <link href="http://yangtf983.github.io/2020/07/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B09%EF%BC%9ADecision%20Tree/"/>
     <id>http://yangtf983.github.io/2020/07/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B09%EF%BC%9ADecision%20Tree/</id>
@@ -396,26 +418,6 @@
     
       &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
 &lt;p&gt;本堂课在整合之前讲的分类问题后将其延伸到更多更复杂的问题上。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习基石笔记10：Logistic Regression</title>
-    <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/"/>
-    <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/</id>
-    <published>2020-03-17T17:15:07.000Z</published>
-    <updated>2020-07-03T00:41:56.837Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;这一节探讨Logistic回归的问题，这种回归实际上是可以看做是一种soft binary classification问题的解法，这种问题是说数据的标签是硬的（确定是圈或叉），但理想的无噪声数据的标签其实是软的（只有是不同标签的概率值）。Logistic模型的形式给出的就是0到1之间的数字（对概率的估计）。&lt;/p&gt;
     
     </summary>
     

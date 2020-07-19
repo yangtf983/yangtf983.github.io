@@ -141,6 +141,75 @@
       
         
 
+<article id="post-机器学习技法/机器学习技法笔记11：Gradient Boosted Decision Tree" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/">机器学习技法笔记11：Gradient Boosted Decision Tree</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/" class="article-date">
+  <time datetime="2020-07-19T09:34:07.000Z" itemprop="datePublished">2020-07-19</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>上一讲讲了随机森林，这是一种用 Bagging 的方式把决策树聚合起来的算法。</p>
+<p>这一讲要讲的是 AdaBoost 和决策树的结合，以及把算法延伸到非分类问题上的方法。</p>
+<p>这一讲讲完，聚合模型的内容也就告一段落，这一讲的最后会对讲过的聚合模型做一个总结。</p>
+        
+          <a class="article-more-link" href="/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/" data-id="ckcsx6loz0000ncvb1mlx3eek"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习技法听课笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+</article>
+
+
+
+      
+        
+
 <article id="post-机器学习技法/机器学习技法笔记9：Decision Tree" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
@@ -658,74 +727,6 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/" data-id="ckc4b9g6400007svb4flxfosq"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习技法听课笔记</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-</article>
-
-
-
-      
-        
-
-<article id="post-机器学习技法/机器学习技法笔记3：Kernel Support Vector Machine" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/">机器学习技法笔记3：Kernel Support Vector Machine</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/" class="article-date">
-  <time datetime="2020-07-01T14:18:07.000Z" itemprop="datePublished">2020-07-01</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
-<p>上一讲导出了 hard-margin 情形下 SVM 的对偶解法，这种方法表面上与特征空间的维度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>d</mi><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">\tilde{d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9312999999999998em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9312999999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.61344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08332999999999999em;">~</span></span></span></span></span></span></span></span></span> 无关，但是这一步隐含在求内积 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>z</mi><mi>n</mi><mi>T</mi></msubsup><msub><mi>z</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">z_n^Tz_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.088331em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 当中了，当特征空间维度很大时，依然会有非常大的开销。</p>
-<p>这一讲的目的是找到一种求解的复杂度与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>d</mi><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">\tilde{d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9312999999999998em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9312999999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.61344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08332999999999999em;">~</span></span></span></span></span></span></span></span></span> 无关的 SVM 解法，由此引入了 kernel 这一重要概念。</p>
-        
-          <a class="article-more-link" href="/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/">Read More...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/" data-id="ckc3g5nq70000uwvb5hfjcqv9"
          class="article-share-link">Share</a>
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" rel="tag">机器学习技法听课笔记</a></li></ul>

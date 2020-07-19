@@ -99,6 +99,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习技法笔记11：Gradient Boosted Decision Tree</title>
+    <url>/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/</url>
+    <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
+<p>上一讲讲了随机森林，这是一种用 Bagging 的方式把决策树聚合起来的算法。</p>
+<p>这一讲要讲的是 AdaBoost 和决策树的结合，以及把算法延伸到非分类问题上的方法。</p>
+<p>这一讲讲完，聚合模型的内容也就告一段落，这一讲的最后会对讲过的聚合模型做一个总结。</p>
+<a id="more"></a>
+<h1 id="1-adaboost-decision-tree"><a class="markdownIt-Anchor" href="#1-adaboost-decision-tree"></a> 1 AdaBoost Decision Tree</h1>
+<h1 id="2-optimization-of-adaboost"><a class="markdownIt-Anchor" href="#2-optimization-of-adaboost"></a> 2 Optimization of AdaBoost</h1>
+<h1 id="3-gradient-boosting"><a class="markdownIt-Anchor" href="#3-gradient-boosting"></a> 3 Gradient Boosting</h1>
+<h1 id="4-summary-of-aggregation"><a class="markdownIt-Anchor" href="#4-summary-of-aggregation"></a> 4 Summary of Aggregation</h1>
+<img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B0/10/09.png" width="70%" height="70%">
+<hr />
+]]></content>
+      <tags>
+        <tag>机器学习技法听课笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习技法笔记9：Decision Tree</title>
     <url>/2020/07/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B09%EF%BC%9ADecision%20Tree/</url>
     <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
