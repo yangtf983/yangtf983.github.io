@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-07-19T09:52:32.175Z</updated>
+  <updated>2020-07-19T13:34:36.479Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/"/>
     <id>http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/</id>
     <published>2020-07-19T09:34:07.000Z</published>
-    <updated>2020-07-19T09:52:32.175Z</updated>
+    <updated>2020-07-19T13:34:36.479Z</updated>
     
     <summary type="html">
     
@@ -33,8 +33,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -43,7 +45,7 @@
     <link href="http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B010%EF%BC%9ARandom%20Forest/"/>
     <id>http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B010%EF%BC%9ARandom%20Forest/</id>
     <published>2020-07-19T09:34:07.000Z</published>
-    <updated>2020-07-19T11:21:48.409Z</updated>
+    <updated>2020-07-19T13:38:38.478Z</updated>
     
     <summary type="html">
     
@@ -57,7 +59,7 @@
       <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -66,7 +68,7 @@
     <link href="http://yangtf983.github.io/2020/07/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B09%EF%BC%9ADecision%20Tree/"/>
     <id>http://yangtf983.github.io/2020/07/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B09%EF%BC%9ADecision%20Tree/</id>
     <published>2020-07-18T09:54:07.000Z</published>
-    <updated>2020-07-18T09:58:02.859Z</updated>
+    <updated>2020-07-19T13:39:37.204Z</updated>
     
     <summary type="html">
     
@@ -76,8 +78,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -86,7 +90,7 @@
     <link href="http://yangtf983.github.io/2020/07/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B08%EF%BC%9AAdaptiva%20Boosting/"/>
     <id>http://yangtf983.github.io/2020/07/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B08%EF%BC%9AAdaptiva%20Boosting/</id>
     <published>2020-07-18T03:02:07.000Z</published>
-    <updated>2020-07-18T03:35:01.962Z</updated>
+    <updated>2020-07-19T13:39:53.330Z</updated>
     
     <summary type="html">
     
@@ -96,8 +100,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -106,7 +112,7 @@
     <link href="http://yangtf983.github.io/2020/07/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B07%EF%BC%9ABlending%20and%20Bagging/"/>
     <id>http://yangtf983.github.io/2020/07/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B07%EF%BC%9ABlending%20and%20Bagging/</id>
     <published>2020-07-17T09:42:07.000Z</published>
-    <updated>2020-07-18T03:32:40.181Z</updated>
+    <updated>2020-07-19T13:40:12.328Z</updated>
     
     <summary type="html">
     
@@ -117,8 +123,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -127,7 +135,7 @@
     <link href="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B02%EF%BC%9A%E7%94%A8%20sklean%20%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E5%9B%9E%E5%BD%92/"/>
     <id>http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B02%EF%BC%9A%E7%94%A8%20sklean%20%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E5%9B%9E%E5%BD%92/</id>
     <published>2020-07-08T13:36:07.000Z</published>
-    <updated>2020-07-08T13:41:56.741Z</updated>
+    <updated>2020-07-19T13:49:06.155Z</updated>
     
     <summary type="html">
     
@@ -137,8 +145,10 @@
     </summary>
     
     
+      <category term="机器学习编程" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="机器学习编程" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="编程" scheme="http://yangtf983.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -147,7 +157,7 @@
     <link href="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/"/>
     <id>http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/</id>
     <published>2020-07-08T01:28:07.000Z</published>
-    <updated>2020-07-08T08:09:33.743Z</updated>
+    <updated>2020-07-19T13:40:33.649Z</updated>
     
     <summary type="html">
     
@@ -158,8 +168,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -168,7 +180,7 @@
     <link href="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/"/>
     <id>http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B05%EF%BC%9AKernel%20Logistic%20Regression/</id>
     <published>2020-07-08T01:28:07.000Z</published>
-    <updated>2020-07-08T01:28:07.063Z</updated>
+    <updated>2020-07-19T13:40:48.971Z</updated>
     
     <summary type="html">
     
@@ -178,8 +190,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -188,7 +202,7 @@
     <link href="http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/"/>
     <id>http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/</id>
     <published>2020-07-02T12:24:07.000Z</published>
-    <updated>2020-07-08T13:41:32.905Z</updated>
+    <updated>2020-07-19T13:48:48.324Z</updated>
     
     <summary type="html">
     
@@ -198,8 +212,10 @@
     </summary>
     
     
+      <category term="机器学习编程" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="机器学习编程" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="编程" scheme="http://yangtf983.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -208,7 +224,7 @@
     <link href="http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/"/>
     <id>http://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/</id>
     <published>2020-07-02T04:49:07.000Z</published>
-    <updated>2020-07-02T04:49:35.378Z</updated>
+    <updated>2020-07-19T13:41:05.479Z</updated>
     
     <summary type="html">
     
@@ -218,8 +234,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -228,7 +246,7 @@
     <link href="http://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/"/>
     <id>http://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/</id>
     <published>2020-07-01T14:18:07.000Z</published>
-    <updated>2020-07-01T14:18:56.861Z</updated>
+    <updated>2020-07-19T13:41:23.215Z</updated>
     
     <summary type="html">
     
@@ -239,8 +257,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -249,7 +269,7 @@
     <link href="http://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/"/>
     <id>http://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/</id>
     <published>2020-07-01T04:21:07.000Z</published>
-    <updated>2020-07-01T11:25:15.073Z</updated>
+    <updated>2020-07-19T13:41:41.021Z</updated>
     
     <summary type="html">
     
@@ -259,8 +279,10 @@
     </summary>
     
     
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -269,7 +291,7 @@
     <link href="http://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/"/>
     <id>http://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/</id>
     <published>2020-06-30T04:14:07.000Z</published>
-    <updated>2020-06-30T04:18:52.240Z</updated>
+    <updated>2020-07-19T13:42:03.757Z</updated>
     
     <summary type="html">
     
@@ -279,30 +301,10 @@
     </summary>
     
     
-    
-      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>应用统计考研经验分享</title>
-    <link href="http://yangtf983.github.io/2020/05/21/%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
-    <id>http://yangtf983.github.io/2020/05/21/%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</id>
-    <published>2020-05-20T16:40:07.000Z</published>
-    <updated>2020-06-04T15:55:10.086Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;初试成绩：409-413&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这一篇文章是打算分享到微博的，为了避免暴露身份我就不放每一门的成绩了。&lt;/p&gt;
-&lt;p&gt;内容仅供参考，适合不适合请自己考虑，学习是一个很个性化的事情，没办法照搬照抄别人的经验。但是我相信每一个人都有适合自己的学习方法。&lt;/p&gt;
-    
-    </summary>
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
     
-    
-      <category term="考研经验" scheme="http://yangtf983.github.io/tags/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C/"/>
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -311,7 +313,7 @@
     <link href="http://yangtf983.github.io/2020/03/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B016%EF%BC%9AThree%20Learning%20Principles/"/>
     <id>http://yangtf983.github.io/2020/03/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B016%EF%BC%9AThree%20Learning%20Principles/</id>
     <published>2020-03-19T16:27:07.000Z</published>
-    <updated>2020-03-19T16:27:53.835Z</updated>
+    <updated>2020-07-19T13:47:19.176Z</updated>
     
     <summary type="html">
     
@@ -322,8 +324,10 @@
     </summary>
     
     
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -332,7 +336,7 @@
     <link href="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B015%EF%BC%9AValidation/"/>
     <id>http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B015%EF%BC%9AValidation/</id>
     <published>2020-03-19T15:45:07.000Z</published>
-    <updated>2020-03-19T14:45:32.644Z</updated>
+    <updated>2020-07-19T13:47:06.194Z</updated>
     
     <summary type="html">
     
@@ -343,8 +347,10 @@
     </summary>
     
     
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -353,7 +359,7 @@
     <link href="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/"/>
     <id>http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/</id>
     <published>2020-03-19T05:42:07.000Z</published>
-    <updated>2020-06-30T03:30:35.411Z</updated>
+    <updated>2020-07-19T13:46:53.061Z</updated>
     
     <summary type="html">
     
@@ -364,8 +370,10 @@
     </summary>
     
     
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -374,7 +382,7 @@
     <link href="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/"/>
     <id>http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/</id>
     <published>2020-03-18T17:20:07.000Z</published>
-    <updated>2020-03-18T17:26:35.230Z</updated>
+    <updated>2020-07-19T13:46:38.695Z</updated>
     
     <summary type="html">
     
@@ -384,8 +392,10 @@
     </summary>
     
     
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -394,7 +404,7 @@
     <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/"/>
     <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/</id>
     <published>2020-03-18T15:23:07.000Z</published>
-    <updated>2020-03-18T15:23:19.417Z</updated>
+    <updated>2020-07-19T13:46:19.469Z</updated>
     
     <summary type="html">
     
@@ -404,8 +414,10 @@
     </summary>
     
     
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -414,7 +426,7 @@
     <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B011%EF%BC%9ALinear%20Models%20for%20Classification/"/>
     <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B011%EF%BC%9ALinear%20Models%20for%20Classification/</id>
     <published>2020-03-18T09:05:07.000Z</published>
-    <updated>2020-03-18T09:05:37.853Z</updated>
+    <updated>2020-07-19T13:46:06.700Z</updated>
     
     <summary type="html">
     
@@ -424,8 +436,32 @@
     </summary>
     
     
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习基石笔记10：Logistic Regression</title>
+    <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/"/>
+    <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B010%EF%BC%9ALogistic%20Regression/</id>
+    <published>2020-03-17T17:15:07.000Z</published>
+    <updated>2020-07-19T13:45:52.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这一节探讨Logistic回归的问题，这种回归实际上是可以看做是一种soft binary classification问题的解法，这种问题是说数据的标签是硬的（确定是圈或叉），但理想的无噪声数据的标签其实是软的（只有是不同标签的概率值）。Logistic模型的形式给出的就是0到1之间的数字（对概率的估计）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

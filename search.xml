@@ -15,8 +15,11 @@
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B0/10/09.png" width="70%" height="70%">
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -117,7 +120,7 @@
         <category>机器学习技法听课笔记</category>
       </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -193,8 +196,11 @@
 <p>至此，我们讲完了所有的聚合模型的基本模型，下一讲要讲的是一种能够把这些基本模型混起来用的方法。</p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -274,8 +280,11 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
 <p>至此，我们介绍了 uniform 的聚合算法 Bagging，也介绍了 linear 的聚合算法 AdaBoost，下一讲将介绍的是一种 conditional 的聚合算法——决策树。</p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -364,8 +373,11 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
 <p>bagging 是 uniform 的聚合模型，虽然已经威力很强了，但是有时候我们还是需要 linear 的或 conditional 的聚合模型，接下来的两节将分别介绍两种类型下有代表性的一个算法。</p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -617,8 +629,11 @@ LogisticRegressionCV(Cs=10, class_weight=None, cv=5, dual=False,
  'verbose': 0}
 </code></pre>
 ]]></content>
+      <categories>
+        <category>机器学习编程</category>
+      </categories>
       <tags>
-        <tag>机器学习编程</tag>
+        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -680,8 +695,11 @@ LogisticRegressionCV(Cs=10, class_weight=None, cv=5, dual=False,
 <p><strong>上图中最后一行核方法的使用比倒数第二行要广泛得多，因为它们的支持向量过多，预测的计算量大，想比如最后一行的算法没有其他优势。</strong></p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -754,8 +772,11 @@ LogisticRegressionCV(Cs=10, class_weight=None, cv=5, dual=False,
 <p>这种方法全称是 kernel logistic regression，简称 KLR，与 SVM 不同的是，KLR 中的系数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>β</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\beta_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 一般不为 0，是密集的，而 SVM 中的系数是稀疏的。这样看来，这种方法需要付出比较大的计算代价。</p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1064,8 +1085,11 @@ Text(0.5, 0.98, 'Confusion Matrix')
 </code></pre>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习编程</category>
+      </categories>
       <tags>
-        <tag>机器学习编程</tag>
+        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -1152,8 +1176,11 @@ Text(0.5, 0.98, 'Confusion Matrix')
 <p>两张图对比可以发现支持向量的数量有一定的参考价值。但是它只是一个上限，不够准确，一般的做法是仅仅用它排除掉一些过于“危险的”模型，其他模型还是采取交叉验证的方法。在上面的例子中就可以把第一行的排除，下面两行用交叉验证。</p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1319,8 +1346,11 @@ K&amp;=\left[\begin{array}{cccc}
 <p>定义自己的 kernel 是一个很困难的过程，一般都是使用常用的 kernel，比如前三种。</p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1410,8 +1440,11 @@ K&amp;=\left[\begin{array}{cccc}
 <p>在最后的对偶问题中，求解变量的数目和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>d</mi><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">\tilde{d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9312999999999998em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9312999999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.61344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08332999999999999em;">~</span></span></span></span></span></span></span></span></span> 无关了，但是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi></mrow></msub><mo>=</mo><msub><mi>y</mi><mi>n</mi></msub><msub><mi>y</mi><mi>m</mi></msub><msubsup><mi>z</mi><mi>n</mi><mi>T</mi></msubsup><msub><mi>z</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">q_{n,m}=y_ny_mz^T_nz_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.088331em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>z</mi><mi>n</mi><mi>T</mi></msubsup><msub><mi>z</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">z^T_nz_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.088331em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 依然是一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>d</mi><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">\tilde{d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9312999999999998em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9312999999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.61344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08332999999999999em;">~</span></span></span></span></span></span></span></span></span> 维向量的内积，所以要想达到我们的目标，必须能够避开这个内积的计算，这就是下一讲要讲的问题。</p>
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1488,113 +1521,11 @@ K&amp;=\left[\begin{array}{cccc}
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B0/01/15.png" width="100%" height="100%">
 <hr />
 ]]></content>
+      <categories>
+        <category>机器学习技法听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习技法听课笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>应用统计考研经验分享</title>
-    <url>/2020/05/21/%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[<h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
-<p><em>初试成绩：409-413</em></p>
-<p>这一篇文章是打算分享到微博的，为了避免暴露身份我就不放每一门的成绩了。</p>
-<p>内容仅供参考，适合不适合请自己考虑，学习是一个很个性化的事情，没办法照搬照抄别人的经验。但是我相信每一个人都有适合自己的学习方法。</p>
-<a id="more"></a>
-<h2 id="对应统专业的看法"><a class="markdownIt-Anchor" href="#对应统专业的看法"></a> 对应统专业的看法</h2>
-<p>应用统计是一个这几年比较热门的专业，分数快速攀升，不过这一届据我了解大部分985在去年公布的应用统计考研名额却是下降的，进一步导致了竞争加剧，有点名气的985基本都在10:1甚至更高的报录比。另一方面，作为专硕，很多学校都是放养式管理（就是导师不太管），这一点如果介意的话最好是提前了解好，我觉得专硕比较适合知道自己研究生阶段想干什么并且确认不读博的人，不然两三年后再次面临就业还是很麻烦，如果想读博又要考博，就不如直接读学硕。而且学硕由于考试的科目是数分高代，所以基本排除了其他学院的人跨考，报录比小一点。并且学硕有科研项目，如果自己不知道学什么也可以在完成导师布置的任务的过程中得到提升。</p>
-<h2 id="数学三"><a class="markdownIt-Anchor" href="#数学三"></a> 数学三</h2>
-<p><strong>1</strong> 我的数学复习大致的时间线如下：</p>
-<blockquote>
-<p>三月到暑假前：高数和线代的课本上要考的章节整个看一遍加上课后题都写一遍，结合张宇18讲的视频看了概率论课本上的一些重点内容；</p>
-<p>暑假到短学期结束（九月20日左右）：看完张宇强化班的视频并做了一遍张宇的强化教材《闭关修炼》；</p>
-<p>开学到考前一个月：《闭关修炼》又前后做了三遍，每次只做前一遍觉得比较难的，后期开始按年份做真题，一周两三套，做到考前都没做完真题；</p>
-<p>最后一个月：惯例每周两三套真题，抽空快速看了一下张宇数学冲刺班并做了一下冲刺班的题，这个阶段我的重心完全放在政治大题的背诵上了，主要是没找对方法，这个政治部分再谈。</p>
-</blockquote>
-<p><strong>2</strong> 说一下我觉得做得好和不好的地方</p>
-<p>好的地方：</p>
-<blockquote>
-<p>前期做课后题基础打得比较牢，后期听老师将技巧什么的容易理解，而且压力不会太大，有些技巧说实话记起来挺复杂的，能用理解的方法去做可以为冲刺复习减轻不少压力，因为没有理解的技巧后期需要不断重复背诵以免忘记，后期的背诵压力太大。课后题的题目整体难度高于考研题一个档次，所以也有很多人不建议做课后题，我觉得这么说也有道理，大家自行权衡二者利弊。</p>
-<p>对题目做的比较熟练，《闭关修炼》做了四遍，这样子对本来不熟悉的知识点、技巧、题型都掌握的比较熟了。其实我还买了《张宇1000题》和《汤家凤1800题》，权衡了一下之后选择把闭关修炼做熟练而不是急着做更多题。</p>
-</blockquote>
-<p>不好的地方：</p>
-<blockquote>
-<p>最后一个月给数学留得时间太少了，最后考前很多技巧都忘了，幸好考前最后一天拼着熬夜到一点把政治和数学又都翻了一遍，第二天没有出现会但忘掉的情况</p>
-</blockquote>
-<p><strong>3</strong> 对数学的看法</p>
-<blockquote>
-<p>常常看到很多人问数学什么时间前要结束一轮，什么时间前结束二轮，这个个人认为是一个误区，如果一轮复习得当，一轮复习完之后花两周时间把知识点记忆一下，成绩就能稳定在120以上，更多分数其实是看细心，强化班感觉主要练做题速度和技巧熟练度。数三题目不难，难得是不出粗心的错误。</p>
-</blockquote>
-<p>数学三没有太难的题，就是一个熟能生巧，细心，不要计算错误（我所有的分数都是因为这两条丢的，希望大家重视）就可以考好。</p>
-<h2 id="英语二"><a class="markdownIt-Anchor" href="#英语二"></a> 英语二</h2>
-<p><strong>1</strong> 英语大体时间线：</p>
-<blockquote>
-<p>暑假前：单词；一周一套英语一试卷（这个操作我觉得是废的，不值得学习）；</p>
-<p>暑假到考前半个月：真题和各题型专项训练</p>
-</blockquote>
-<p><strong>2</strong> 英语复习的想法</p>
-<blockquote>
-<p>英语二79分不算高分，尤其是考应统其实有点低了，作文分数太低，可能最后用的模板句式有点简单。我觉得英语复习的时候有一个重点就是必须一次肯花时间把一个题型做个透，很多考研老师说一周做一套题之类的，我开始也试过，但是没什么用，因为这次学的技巧还没实践下次再做就生疏了，直到我开始用一周时间专门攻克阅读开始分数才开始提升，之后每种题型都专门攻克。</p>
-<p>单词背牢是成功的一半。我相信背单词要短平快，不要说一天用软件背个三四十个到考前过几轮，这样效果难以保证，我推荐的做法是每天下午都看恋恋有词视频，看一遍把笔记都记在书上，之后在一个月的时间内把书上单词快速背上两遍，要考核自己，挡住汉语，看英语想意思。大概能想到百分之八十以上的就差不多了。</p>
-<p>背词软件可以在做完上面那一步后用来辅助，之后每天看几十个复习。推荐墨墨背单词，正版的，因为正版的墨墨背单词有一个特别精髓的东西，就是可以自己改词的意思。很多单词用词典搜索显示很多意思，考研用的意思往往很不起眼。使用墨墨背单词的时候，对于生僻词，先从例句里面找到之前考研考过哪些意思，然后修改词的意思，重点背这些，其他的就不背了。举个例子，有一个单词buck，意思挺多的，什么美元、雄鹿、花花公子，但是就考过一个短语&quot;bang  for the buck&quot;，可以理解为“钱花的值得”、“资金回报”，那其实就只需要记美元这个意思（因为这个短语其实用的是这个意思），或者直接只记这个短语的意思就行。类似于这种生僻词其实一年不会新增几个，所以如果把他们的意思都记住边际收益太低。只记重点就可以。</p>
-</blockquote>
-<p><strong>3</strong> 个人觉得不错的英语资料</p>
-<blockquote>
-<p>单词：恋恋有词，结合视频，这个教材要是光看书就废了</p>
-<p>完形填空：易熙人（新东方）</p>
-<p>阅读：唐迟</p>
-<p>新题型：刘琦</p>
-<p>长难句：何凯文</p>
-<p>作文：王江涛的比较坑，别人的最后一个月背几篇就够了，王江涛的你得从暑假就开始背，还不一定会用，大家可以听听他的课，再听听潘赟/刘晓燕/何凯文任意一个人的作文课决定跟谁。反正我是一下子就决定跟潘赟了。不过我怀疑我最后的作文分数并不高，因为考完对过答案，最后英语比自己预想的低5-10分，但是我觉得我要是跟王江涛作文分数一定不如跟潘赟高，而且还会花费太多时间影响其他科目复习。</p>
-</blockquote>
-<h2 id="政治"><a class="markdownIt-Anchor" href="#政治"></a> 政治</h2>
-<p><strong>1</strong> 政治算是大家最不重视，但是对应用统计考生却非常重要的一门课，因为应统可以说是每一门分数都要拿的出手才能进到复试，大部分好学校数学学院的学硕基本上政治考60出头就不算拉分了（听我一个考上交的朋友说上交数学学硕上线的大部分政治都是60多一些的成绩，so…），但是对应统而言政治至少70才不拉分，所以考应统的希望重视一下，不要和别的专业的比复习进度，因为对政治分数要求不一样。</p>
-<p><strong>2</strong> 政治复习时间线</p>
-<blockquote>
-<p>从暑假后期到短学期结束：把徐涛强化班听了一遍</p>
-<p>从开学到考前一个月：背诵强化班的笔记，做1000题、优题库，复习笔记和做过的题</p>
-<p>最后一个半月左右到考前：肖四肖八，肖秀荣大题的背诵手册（不是那本厚的，是薄薄的一本小册子，按专题的，叫知识点提要还是什么，大概十月左右出版）</p>
-</blockquote>
-<p><strong>3</strong> 做得好和不好的地方</p>
-<p>做的好的：</p>
-<blockquote>
-<p>复习进度安排比较合适。</p>
-<p>大题背诵了肖秀荣的那个《考点预测（背诵版）》小册子，这个在考试的时候帮助我还挺大的。其实这几年政治大题押题越来越不准了，或者说题目变灵活了，光背肖四不太够用。我这次考试选择题出了很大问题，只考了37分，幸亏大题拿了36分的高分才让我起死回生。因为政治大题一般都是30分，像北上广这些地方一般更低，所以36确实是个挺惊喜挺意外的分数。</p>
-<p>考前一周得朋友指点关注了一个up主（网名：空卡空卡空空卡，大家可以关注一下，可以看看她去年的视频，今年她应该考前还会发），讲了一些很有用的政治背诵技巧，不然我是铁定背不完的。。。不要死记硬背，不然题目不一样就懵逼了。</p>
-<p>可以用一些辅助手段，比如：手机软件anki（暑假的时候淘宝上应该就有卖最新卡组的了，买一套很便宜，没事刷刷一千题），喜马拉雅（有些声音很棒的小哥哥小姐姐会在上面上传自己读的政治资料，比如我背考点预测的时候，在白天去教室的路上会先把当天要背的内容听几遍，之后晚上吃完饭背的时候已经熟悉了，而且脑子其实以及自动把白天听过的内容整理了一遍了，背起来比直接背容易很多）</p>
-</blockquote>
-<p>做的差的：</p>
-<blockquote>
-<p>在学会政治背诵技巧之前花费了太多时间在政治上，事倍功半，导致最后一个月数学和专业课时间都被大幅度压缩，当时很焦虑。所以希望大家重视政治背诵技巧，不要死记硬背，不然真得背得怀疑人生。。。</p>
-</blockquote>
-<p><strong>3</strong> 对政治的看法</p>
-<blockquote>
-<p>我考完试一度怀疑我自己做过的一千题有什么用，除了马原部分，其他都是时政的，这一点大家自己上完政治强化课以后做一下真题感受一下，看看近年来考过多少书上的知识点。所以一千题马原认真做，其他自己体会，感觉熟悉了就行。最后的押题挺重要的，但是光看肖四肖八的选择题其实不够，那本背诵手册是很好的东西。上面有一些肖四肖八没有押到的选择题，强烈推荐背一下那个，绝对不后悔。</p>
-</blockquote>
-<h2 id="统计学"><a class="markdownIt-Anchor" href="#统计学"></a> 统计学</h2>
-<p><strong>1</strong> 复习时间线</p>
-<blockquote>
-<p>暑假到短学期结束：复习一遍茆书，课后习题全做，并做了一份笔记方便后期复习，中间穿插看了一些《统计推断》，但是没有很认真看，给后面埋下了隐患。</p>
-<p>开学到考前一个月：复习笔记、做过的习题，之后开始做真题。</p>
-<p>最后一个月：继续做真题，从真题中发现自己复习还有一个很大的缺口，又回去复习课本。</p>
-</blockquote>
-<p><strong>2</strong> 做得好和不好的地方</p>
-<p>专业课各学校都不相同，说点我觉得通用的看法：</p>
-<p>做的好的：</p>
-<blockquote>
-<p>第一遍复习时笔记做的比较好，后期不用每次都看课本，可以很快复习一遍知识点。专业课考试确实每个学校都有侧重点，这是可以自己感受到的，没必要对所有章节一视同仁。</p>
-</blockquote>
-<p>做的差的：</p>
-<blockquote>
-<p>真题做得太晚（担心做完的太早后面没有题目练习），考前半个月左右的时候才做到15年真题，突然发现15年往后新增了许多知识点，都是茆书上面没有的，才慌慌忙忙去拿着《统计推断》再复习，这时候就很慌了。后来想想，专业课试卷完全不用担心做完太早后面没得练手，其实考研题目一般都考的比较浅显，就是会哪个知识点，一般就能做出来，看到题目就能对应知识点，比较直接，大部分不会做的题目都是因为对公式和知识点记忆不深刻（这一点大家可以在看完一遍书后自己做题感受），所以对重点考察的知识点有一个深刻的记忆才是最重要的，甚至对知识点理解的深度相较之下都不太重要，刷过题目的多少更不如前两者重要。一张试卷里面记住了知识点还不能做出来的顶多就一道题。所以完全可以在第一遍复习完课本后就做完真题，之后针对重点多复习几遍知识点。</p>
-</blockquote>
-<p><strong>3</strong> 对专业课的看法</p>
-<blockquote>
-<p>加强知识点理解，这不是高中数学，没有花哨的技巧，只要知识点记住并理解了就能做出来。例题争取一遍过，顺便可以把例题分一下类，比如在一个本子上面记下来每一章考什么知识的题目，分别是哪些在哪页，如果能把每一张的知识点用很少的篇幅总结出脉络就更好了。后面碰到哪一类题目直接回去做对应类的题目，看相应的知识点。</p>
-<p>不用刷题，都是对知识点的理解，我经常在一些应统群里看到很不可思议的问题，有的对知识点没有一个基本的概念就急着刷题，书上题目做了又做一些机构的各个高校的题目汇总，但做完看了答案还是不会。其实挺没必要的。认真看书上知识点的讲解，理解了知识点时候的成就感比多刷题的成就感大很多，当你发现自己本科没学懂的知识点在某个瞬间懂了，这种感觉比刷题爽多了。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>考研经验</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1640,8 +1571,11 @@ K&amp;=\left[\begin{array}{cccc}
 GangXia<br />
 （￣︶￣）↗　（￣︶￣）↗　（￣︶￣）↗</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1690,8 +1624,11 @@ $g_m$是用整个数据集做训练得到的最佳模型，显然当validation�
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/15/fig11.png" width="70%" height="70%"><br />
 V-fold Cross Validation是一种比Leave-One-Out Cross Validation更实用的方法，一般用5-Fold或10-Fold的效果就会比较好。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1742,8 +1679,11 @@ L1和L2是常用的regularizer，对他们做一个比较：<br />
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/14/fig16.png" width="70%" height="70%"><br />
 上图中是一种与本节的例子中不同的regularizer，其特征是对高次项的参数惩罚加大，因此倾向于选择低维的多项式，这种regularizer显然属于target-dependent类型的。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1795,8 +1735,11 @@ data cleaning是修正数据集中的错误标签，data pruning是删除数据�
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/13/fig09.png" width="70%" height="70%"><br />
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/13/fig10.png" width="70%" height="70%"></p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1859,8 +1802,11 @@ data cleaning是修正数据集中的错误标签，data pruning是删除数据�
 从关系图中可以看出，一味增加多项式模型的复杂度虽然可以降低<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，但是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>E</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{out}-E_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>难以保证，而实际问题中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{out}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是未知的，不能每个模型计算出来<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>E</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{out}-E_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>进行判断，所以安全的方法是从一次模型开始，逐渐增大次数，当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>能够满足要求时就终止。<br />
 事实上，线性模型已经能够满足很多模型的情况了。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1954,8 +1900,11 @@ OVO算法过程：<br />
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/11/fig13.png" width="70%" height="70%"><br />
 从这个例子中可以看出OVO有时可以显著降低OVA的算法复杂度。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2022,8 +1971,11 @@ s是各项指标的线性加权值，<span class="katex"><span class="katex-math
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.652771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">η</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="minner"><span class="mopen delimcenter" style="top:0em;">∥</span><span class="mord">∇</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31750199999999995em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">in </span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mclose delimcenter" style="top:0em;">∥</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∇</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31750199999999995em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">in </span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 <p>这个迭代式被称为固定学习率的梯度下降法（fixed learning rate gradient descent），<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>η</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">\eta&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">η</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>被称为学习率。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2072,8 +2024,11 @@ s是各项指标的线性加权值，<span class="katex"><span class="katex-math
 可以看出，当线性回归的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>足够小时，也就约束了PLA的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E_{out}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>足够小，这也就解释了可以用线性回归做二分类问题。<br />
 并且由于线性回归的err更好解（有解析式），因此可以先用线性回归得到一个相对不错的解，再将其作为初始解采用PLA或pocket算法寻找更好的解。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2168,8 +2123,11 @@ CIA问题的err写法如下：<br />
 这种 修改算法的方法被称为systematic route或reduction，可以用来将很多算法修改成有权重的情况。</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2238,8 +2196,11 @@ VC bound之所以宽松，可以解释为我们获得这个bound过程中的各�
 </blockquote>
 <p>以后用的最多的并不是VC bound的公式，而是它带给我们的哲学上的信息，例如刚刚的要选择合适的模型复杂度（不能太大也不能太小），这是后面讲算法常会用到的东西，</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2356,8 +2317,11 @@ i
 从中可以看出，当我们拥有10000个数据并把误差放大到0.1时，给出的bound仍然算不上小（接近0.3）。<br />
 实际上，VC bound是一个约束不严格的上界，那么这个上界究竟有什么重要作用值得这样推导？留待下一节解释。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2433,8 +2397,11 @@ i
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/05/fig10.png" width="70%" height="70%"><br />
 这里可以预先透露一下，break point与成长函数是有关系的，事实上<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>H</mi></msub><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">m_H(N)=O(N^{k-1})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0991079999999998em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，具体情况下节再谈。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2517,8 +2484,11 @@ Hoeffding’s Inequality告诉我们当样本数量N比较大时，<span class="
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/04/fig9.png" alt="fig9" /><br />
 但是如同之前所讲的PLA这样的算法其假设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>有无穷个，这样的情况留待后续说明。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2629,6 +2599,9 @@ e-Neighborhood：将每个点与距离其距离小于 e的点全部连起来；<
 <img src="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9D%8E%E5%AE%8F%E6%AF%85%EF%BC%89/fig12.png" width="50%" height="50%"><br />
 同样可以通过梯度下降最小化<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span></p>
 ]]></content>
+      <categories>
+        <category>半监督学习</category>
+      </categories>
       <tags>
         <tag>Semi-supervised Learning</tag>
       </tags>
@@ -2684,8 +2657,11 @@ e-Neighborhood：将每个点与距离其距离小于 e的点全部连起来；<
 <strong>abstract feature</strong><br />
 抽象特征是指数据没有或者很少有实际意义，例如输入数据是用户ID，ID数字的大小和接近程度并没有实际的意义，不同的ID只是代表不同的用户，显然其中包含的信息非常少。抽象特征也是三种输入空间中最难进行机器学习的 一种，也需要特征工程。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2859,8 +2835,11 @@ h(x)&amp;=sign((\Sigma^{d}_{i=1}w_{i}x_{i})+(-threshold)*(+1))\\
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.415108em;vertical-align:-0.957554em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.457554em;"><span style="top:-3.612446em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mop"><span class="mop">min</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">b</span><span class="mpunct mtight">,</span><span class="mord mtight"><span class="mord mathbf mtight" style="margin-right:0.01597em;">w</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-2.402446em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord text"><span class="mord"> subject to </span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.957554em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.457554em;"><span style="top:-3.612446em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span></span></span></span><span style="top:-2.402446em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.01389em;">w</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="mord mathrm">x</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace"> </span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace"> </span><span class="mord mathdefault">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.957554em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p>
 <p>上述表达为二次规划标准型，二次规划的求解已经是一个比较成熟的领域，在很多软件中都有求解该问题的函数，按照对应的格式将数据传入相应函数即可求出SVM的解。</p>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2950,8 +2929,11 @@ h(x)&amp;=sign((\Sigma^{d}_{i=1}w_{i}x_{i})+(-threshold)*(+1))\\
     </tr>
 </table>
 ]]></content>
+      <categories>
+        <category>机器学习基石听课笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习基石听课笔记</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -3113,6 +3095,9 @@ h(x)&amp;=sign((\Sigma^{d}_{i=1}w_{i}x_{i})+(-threshold)*(+1))\\
 在第24章中，依据VC bound以及其他理论和哲学概念对归纳式半监督学习和转导式学习进行了比较。<br />
 本书以三位机器学习研究人员之间关于半监督学习与转导学习之间的关系（以及两者之间的差异）的假设讨论（第25章）作为结尾。</p>
 ]]></content>
+      <categories>
+        <category>半监督学习</category>
+      </categories>
       <tags>
         <tag>Semi-supervised Learning</tag>
       </tags>
@@ -3232,6 +3217,9 @@ h(x)&amp;=sign((\Sigma^{d}_{i=1}w_{i}x_{i})+(-threshold)*(+1))\\
 <li>cs294-112, lec-2</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>强化学习</category>
+      </categories>
       <tags>
         <tag>Reinforcement Learning</tag>
       </tags>
@@ -3374,6 +3362,9 @@ h(x)&amp;=sign((\Sigma^{d}_{i=1}w_{i}x_{i})+(-threshold)*(+1))\\
 <li>Reinforcement Learning: An Introduction</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>强化学习</category>
+      </categories>
       <tags>
         <tag>Reinforcement Learning</tag>
       </tags>
