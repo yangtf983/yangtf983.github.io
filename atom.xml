@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-07-19T13:34:36.479Z</updated>
+  <updated>2020-07-22T12:58:05.844Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -18,17 +18,18 @@
   
   <entry>
     <title>机器学习技法笔记11：Gradient Boosted Decision Tree</title>
-    <link href="http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/"/>
-    <id>http://yangtf983.github.io/2020/07/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/</id>
-    <published>2020-07-19T09:34:07.000Z</published>
-    <updated>2020-07-19T13:34:36.479Z</updated>
+    <link href="http://yangtf983.github.io/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/"/>
+    <id>http://yangtf983.github.io/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/</id>
+    <published>2020-07-22T12:58:07.000Z</published>
+    <updated>2020-07-22T12:58:05.844Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
 &lt;p&gt;上一讲讲了随机森林，这是一种用 Bagging 的方式把决策树聚合起来的算法。&lt;/p&gt;
-&lt;p&gt;这一讲要讲的是 AdaBoost 和决策树的结合，以及把算法延伸到非分类问题上的方法。&lt;/p&gt;
+&lt;p&gt;我们之前讲过 AdaBoost，这是一种专门针对二分类提出的算法，里面的数据加权和权重计算方法都是针对二分类的。这一讲首先要讲的是 AdaBoost 和决策树的结合，这是之前讲过的 AdaBoost-Stump 更加一般的情形，接着我们用最优化的角度推导 AdaBoost 的来源，这么做可以帮我们把 AdaBoost 算法延伸到更多问题上而不只是二分类问题。&lt;/p&gt;
 &lt;p&gt;这一讲讲完，聚合模型的内容也就告一段落，这一讲的最后会对讲过的聚合模型做一个总结。&lt;/p&gt;
+&lt;p&gt;这一讲是整个系列中最难的一讲。&lt;/p&gt;
     
     </summary>
     
