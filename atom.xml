@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-07-24T11:16:38.996Z</updated>
+  <updated>2020-07-25T06:22:50.607Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习技法笔记14：Radial Basis Function Network</title>
+    <link href="http://yangtf983.github.io/2020/07/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B014%EF%BC%9ARadial%20Basis%20Function%20Network/"/>
+    <id>http://yangtf983.github.io/2020/07/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B014%EF%BC%9ARadial%20Basis%20Function%20Network/</id>
+    <published>2020-07-25T06:22:07.000Z</published>
+    <updated>2020-07-25T06:22:50.607Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;径向基函数（Radial Basis Function）是一个取值仅仅依赖于离中心点距离的实值函数，Radial Basis Function Network 是一种把径向基函数和神经网络结合起来的算法，历史上也曾把它看做一种神经网络。&lt;/p&gt;
+&lt;p&gt;注意，RBF 不是一种常用的方法，一般能够使用 RBF 的地方使用高斯核支持向量机也可以得到相近的结果，这一讲介绍这种方法的目的更多的在于引出聚类方法并且引导大家更加一般地思考高斯核支持向量机方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习技法笔记13：Deep Learning</title>
@@ -205,7 +228,7 @@
     <link href="http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/"/>
     <id>http://yangtf983.github.io/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/</id>
     <published>2020-07-08T01:28:07.000Z</published>
-    <updated>2020-07-19T13:40:33.649Z</updated>
+    <updated>2020-07-25T05:06:06.963Z</updated>
     
     <summary type="html">
     
@@ -436,28 +459,6 @@
     
       &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
 &lt;p&gt;这一节介绍overfitting的危害与应对方法&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习基石笔记12：Nonlinear Transformation</title>
-    <link href="http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/"/>
-    <id>http://yangtf983.github.io/2020/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B012%EF%BC%9ANonlinear%20Transformation/</id>
-    <published>2020-03-18T15:23:07.000Z</published>
-    <updated>2020-07-19T13:46:19.469Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;本节课从线性模型拓展到了非线性模型，总结了这种变换的注意事项和代价。&lt;/p&gt;
     
     </summary>
     
