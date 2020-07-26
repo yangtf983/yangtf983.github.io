@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangtf983.github.io/"/>
-  <updated>2020-07-25T06:22:50.607Z</updated>
+  <updated>2020-07-26T10:55:31.619Z</updated>
   <id>http://yangtf983.github.io/</id>
   
   <author>
@@ -17,11 +17,56 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习技法笔记16：Finale</title>
+    <link href="http://yangtf983.github.io/2020/07/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B016%EF%BC%9AFinale/"/>
+    <id>http://yangtf983.github.io/2020/07/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B016%EF%BC%9AFinale/</id>
+    <published>2020-07-26T10:55:07.000Z</published>
+    <updated>2020-07-26T10:55:31.619Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这一讲对这门课程讲过的内容做一个总结。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习技法笔记15：Matrix Factorization</title>
+    <link href="http://yangtf983.github.io/2020/07/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B015%EF%BC%9AMatrix%20Factorization/"/>
+    <id>http://yangtf983.github.io/2020/07/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B015%EF%BC%9AMatrix%20Factorization/</id>
+    <published>2020-07-26T08:58:07.000Z</published>
+    <updated>2020-07-26T09:43:30.156Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;Matrix Factorization，也就是矩阵的分解，主要应用于推荐系统领域，用于实现隐含语义模型（Latent Factor Model）。通过矩阵分解，一方面可以减少运算量，另一方面可以很好的解决由于用户数目和物品数目过多引起的行为矩阵稀疏化问题。&lt;/p&gt;
+&lt;p&gt;这一讲从一个实际比赛的例子出发，讲解矩阵分解的用法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习技法笔记14：Radial Basis Function Network</title>
     <link href="http://yangtf983.github.io/2020/07/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B014%EF%BC%9ARadial%20Basis%20Function%20Network/"/>
     <id>http://yangtf983.github.io/2020/07/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B014%EF%BC%9ARadial%20Basis%20Function%20Network/</id>
     <published>2020-07-25T06:22:07.000Z</published>
-    <updated>2020-07-25T06:22:50.607Z</updated>
+    <updated>2020-07-25T12:46:42.091Z</updated>
     
     <summary type="html">
     
@@ -414,51 +459,6 @@
       &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
 &lt;p&gt;上一节课讲到可以通过增加regularizer惩罚模型复杂度从而帮助做出正确的选择。&lt;br /&gt;
 这一节课讲解如何通过validation选择正确的模型。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习基石笔记14：Regularization</title>
-    <link href="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/"/>
-    <id>http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B014%EF%BC%9ARegularization/</id>
-    <published>2020-03-19T05:42:07.000Z</published>
-    <updated>2020-07-19T13:46:53.061Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;regularization就是给假设加上限制条件后进行最优化的做法。&lt;br /&gt;
-这一堂课将引入regularization，介绍weight decay regularization、regularization与VC理论的关系，并讲解正则化的一般方法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习基石听课笔记" scheme="http://yangtf983.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="机器学习" scheme="http://yangtf983.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习基石笔记13：Hazard of Overfitting</title>
-    <link href="http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/"/>
-    <id>http://yangtf983.github.io/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B013%EF%BC%9AHazard%20of%20Overfitting/</id>
-    <published>2020-03-18T17:20:07.000Z</published>
-    <updated>2020-07-19T13:46:38.695Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;这一节介绍overfitting的危害与应对方法&lt;/p&gt;
     
     </summary>
     
