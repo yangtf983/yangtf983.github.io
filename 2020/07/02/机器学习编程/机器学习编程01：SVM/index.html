@@ -5,29 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
   <meta http-equiv="Cache-Control" content="no-transform">
   <meta http-equiv="Cache-Control" content="no-siteapp">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-bounce.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yangtf983.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":350,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"youngtf.gitee.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":350,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="0 说明 这一篇文章介绍支持向量机的编程问题，涉及到的算法在机器学习技法笔记1-4讲中，参见第 1 讲、第 2 讲、第 3 讲、第 4 讲">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习编程 01：SVM">
-<meta property="og:url" content="https://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/index.html">
+<meta property="og:url" content="https://youngtf.gitee.io/blog/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="0 说明 这一篇文章介绍支持向量机的编程问题，涉及到的算法在机器学习技法笔记1-4讲中，参见第 1 讲、第 2 讲、第 3 讲、第 4 讲">
 <meta property="og:locale" content="en_US">
@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/01/output_22_0.png">
 
-<link rel="canonical" href="https://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/">
+<link rel="canonical" href="https://youngtf.gitee.io/blog/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/">
 
 
 <script id="page-configurations">
@@ -86,7 +86,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Young's Blog" type="application/atom+xml">
+<link rel="alternate" href="/blog/atom.xml" title="Young's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -105,7 +105,7 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Young's Blog</h1>
       <span class="logo-line-after"><i></i></span>
@@ -126,27 +126,27 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">5</span></a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -205,10 +205,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/">
+    <link itemprop="mainEntityOfPage" href="https://youngtf.gitee.io/blog/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
       <meta itemprop="name" content="Alexis Young">
       <meta itemprop="description" content="keep foolish, keep hungry">
     </span>
@@ -243,7 +243,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">机器学习编程</span></a>
+                  <a href="/blog/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">机器学习编程</span></a>
                 </span>
             </span>
 
@@ -256,8 +256,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/" itemprop="commentCount"></span>
+    <a title="valine" href="/blog/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B01%EF%BC%9ASVM/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -273,7 +273,7 @@
 
       
         <h1 id="0-说明"><a class="markdownIt-Anchor" href="#0-说明"></a> 0 说明</h1>
-<p>这一篇文章介绍支持向量机的编程问题，涉及到的算法在机器学习技法笔记1-4讲中，参见<a href="https://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/">第 1 讲</a>、<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/">第 2 讲</a>、<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/">第 3 讲</a>、<a href="https://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/">第 4 讲</a></p>
+<p>这一篇文章介绍支持向量机的编程问题，涉及到的算法在机器学习技法笔记1-4讲中，参见<a href="https://yangtf983.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B01%EF%BC%9ALinear%20SVM/" target="_blank" rel="noopener">第 1 讲</a>、<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/" target="_blank" rel="noopener">第 2 讲</a>、<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B03%EF%BC%9AKernel%20Support%20Vector%20Machine/" target="_blank" rel="noopener">第 3 讲</a>、<a href="https://yangtf983.github.io/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/" target="_blank" rel="noopener">第 4 讲</a></p>
 <a id="more"></a>
 <h1 id="1-使用二次规划求解-hard-margin-linear-svm-的原问题"><a class="markdownIt-Anchor" href="#1-使用二次规划求解-hard-margin-linear-svm-的原问题"></a> 1 使用二次规划求解 hard-margin linear SVM 的原问题</h1>
 <p>使用cvxopt模块求解二次规划问题的使用参考见：<a href="https://scaron.info/blog/quadratic-programming-in-python.html" target="_blank" rel="noopener">Quadratic Programming in Python</a> 和<a href="http://cvxopt.org/examples/tutorial/qp.html" target="_blank" rel="noopener">官方文档</a></p>
@@ -318,7 +318,7 @@ array([-1.00000001,  1.00000001, -1.00000001])
 <p>使用 KKT 条件求出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>b</mi><mo separator="true">,</mo><mi>w</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(b,w)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mclose">)</span></span></span></span></p>
 </li>
 </ol>
-<p>参考网址：<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/">我的博客</a>和 <a href="https://scaron.info/blog/quadratic-programming-in-python.html" target="_blank" rel="noopener">Quadratic Programming in Python</a> 和<a href="http://cvxopt.org/examples/tutorial/qp.html" target="_blank" rel="noopener">官方文档</a></p>
+<p>参考网址：<a href="https://yangtf983.github.io/2020/07/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B02%EF%BC%9ADual%20Support%20Vector%20Machine/" target="_blank" rel="noopener">我的博客</a>和 <a href="https://scaron.info/blog/quadratic-programming-in-python.html" target="_blank" rel="noopener">Quadratic Programming in Python</a> 和<a href="http://cvxopt.org/examples/tutorial/qp.html" target="_blank" rel="noopener">官方文档</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cvxopt</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cvxopt_solve_qp</span><span class="params">(P, q, G=None, h=None, A=None, b=None)</span>:</span></span><br><span class="line">    P = <span class="number">.5</span> * (P + P.T)  <span class="comment"># make sure P is symmetric</span></span><br><span class="line">    args = [cvxopt.matrix(P), cvxopt.matrix(q)]</span><br><span class="line">    <span class="keyword">if</span> G <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        args.extend([cvxopt.matrix(G), cvxopt.matrix(h)])</span><br><span class="line">        <span class="keyword">if</span> A <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">if</span> A.shape[<span class="number">1</span>]:</span><br><span class="line">                    args.extend([cvxopt.matrix(A), cvxopt.matrix(b)])</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                args.extend([cvxopt.matrix(A).trans(), cvxopt.matrix(b)])</span><br><span class="line">    sol = cvxopt.solvers.qp(*args)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'optimal'</span> <span class="keyword">not</span> <span class="keyword">in</span> sol[<span class="string">'status'</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> np.array(sol[<span class="string">'x'</span>]).reshape((P.shape[<span class="number">1</span>],))</span><br></pre></td></tr></table></figure>
 <p>上面的函数与之前的有所不同，对于一维数组，使用cvxopt会自动转成单列矩阵，因此需要trans()一次<br />
@@ -583,7 +583,7 @@ Text(0.5, 0.98, 'Confusion Matrix')
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
           </div>
 
         
@@ -592,11 +592,11 @@ Text(0.5, 0.98, 'Confusion Matrix')
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/" rel="prev" title="机器学习技法笔记4：Soft-Margin Support Vector Machine">
+    <a href="/blog/2020/07/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B04%EF%BC%9ASoft-Margin%20Support%20Vector%20Machine/" rel="prev" title="机器学习技法笔记4：Soft-Margin Support Vector Machine">
       <i class="fa fa-chevron-left"></i> 机器学习技法笔记4：Soft-Margin Support Vector Machine
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/" rel="next" title="机器学习技法笔记6：Support Vector Regression">
+    <a href="/blog/2020/07/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B06%EF%BC%9ASupport%20Vector%20Regression/" rel="next" title="机器学习技法笔记6：Support Vector Regression">
       机器学习技法笔记6：Support Vector Regression <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -671,20 +671,20 @@ Text(0.5, 0.98, 'Confusion Matrix')
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/categories/">
+            <a href="/blog/categories/">
           
         <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
+            <a href="/blog/tags/">
           
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
@@ -751,19 +751,19 @@ Text(0.5, 0.98, 'Confusion Matrix')
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/blog/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
+<script src="/blog/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
 
 
 
@@ -799,7 +799,7 @@ Text(0.5, 0.98, 'Confusion Matrix')
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="/blog/js/local-search.js"></script>
 
 
 
