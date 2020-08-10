@@ -27,7 +27,7 @@
   <meta name="description" content="0 说明 上一讲讲了随机森林，这是一种用 Bagging 的方式把决策树聚合起来的算法。 我们之前讲过 AdaBoost，这是一种专门针对二分类提出的算法，里面的数据加权和权重计算方法都是针对二分类的。这一讲首先要讲的是 AdaBoost 和决策树的结合，这是之前讲过的 AdaBoost-Stump 更加一般的情形，接着我们用最优化的角度推导 AdaBoost 的来源，这么做可以帮我们把 Ada">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习技法笔记11：Gradient Boosted Decision Tree">
-<meta property="og:url" content="https://youngtf.gitee.io/blog/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/index.html">
+<meta property="og:url" content="http://youngtf.gitee.io/blog/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="0 说明 上一讲讲了随机森林，这是一种用 Bagging 的方式把决策树聚合起来的算法。 我们之前讲过 AdaBoost，这是一种专门针对二分类提出的算法，里面的数据加权和权重计算方法都是针对二分类的。这一讲首先要讲的是 AdaBoost 和决策树的结合，这是之前讲过的 AdaBoost-Stump 更加一般的情形，接着我们用最优化的角度推导 AdaBoost 的来源，这么做可以帮我们把 Ada">
 <meta property="og:locale" content="en_US">
@@ -44,7 +44,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B0/11/01.png">
 
-<link rel="canonical" href="https://youngtf.gitee.io/blog/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/">
+<link rel="canonical" href="http://youngtf.gitee.io/blog/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://youngtf.gitee.io/blog/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/">
+    <link itemprop="mainEntityOfPage" href="http://youngtf.gitee.io/blog/2020/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B011%EF%BC%9AGradient%20Boosted%20Decision%20Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
