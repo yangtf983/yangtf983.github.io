@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://youngtf.gitee.io/blog/"/>
-  <updated>2020-07-26T10:55:31.619Z</updated>
+  <updated>2020-08-15T09:31:37.037Z</updated>
   <id>http://youngtf.gitee.io/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习技法作业：1</title>
+    <link href="http://youngtf.gitee.io/blog/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A1/"/>
+    <id>http://youngtf.gitee.io/blog/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A1/</id>
+    <published>2020-08-15T09:18:07.000Z</published>
+    <updated>2020-08-15T09:31:37.037Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
+&lt;p&gt;这一讲内容是机器学习技法第一次作业的个人解答，供参考。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://myfoundationnote-1257754469.cos.ap-nanjing.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E7%AC%94%E8%AE%B0/hw1/hw1.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;作业下载&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习技法听课笔记" scheme="http://youngtf.gitee.io/blog/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%B3%95%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="机器学习" scheme="http://youngtf.gitee.io/blog/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习技法笔记16：Finale</title>
@@ -436,29 +459,6 @@
       &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
 &lt;p&gt;这一节介绍三种有用的原则/技巧。&lt;br /&gt;
 （本节不过多叙述课程中提到的帮助理解的方式，重点在于记住三种技巧本身）&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习基石听课笔记" scheme="http://youngtf.gitee.io/blog/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="机器学习" scheme="http://youngtf.gitee.io/blog/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习基石笔记15：Validation</title>
-    <link href="http://youngtf.gitee.io/blog/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B015%EF%BC%9AValidation/"/>
-    <id>http://youngtf.gitee.io/blog/2020/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B015%EF%BC%9AValidation/</id>
-    <published>2020-03-19T15:45:07.000Z</published>
-    <updated>2020-07-19T13:47:06.194Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;0-说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#0-说明&quot;&gt;&lt;/a&gt; 0 说明&lt;/h1&gt;
-&lt;p&gt;上一节课讲到可以通过增加regularizer惩罚模型复杂度从而帮助做出正确的选择。&lt;br /&gt;
-这一节课讲解如何通过validation选择正确的模型。&lt;/p&gt;
     
     </summary>
     
